@@ -17,7 +17,18 @@ class BusinessFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' =>fake()->company,
+            'address' =>fake()->streetAddress,
+            'city' =>fake()->city,
+            'state' =>fake()->state,
+            'postal_code' =>fake()->postcode,
+            'country' =>fake()->country,
+            'phone' =>fake()->phoneNumber,
+            'email' =>fake()->email,
+            'website' =>fake()->url,
+            'description' =>fake()->paragraph,
+            'latitude' =>fake()->latitude,
+            'longitude' =>fake()->longitude,
         ];
     }
 }

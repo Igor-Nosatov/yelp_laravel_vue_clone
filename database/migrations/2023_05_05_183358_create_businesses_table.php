@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('businesses', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255);
+            $table->string('address', 255);
+            $table->string('city', 255);
+            $table->string('state', 255);
+            $table->string('postal_code', 255);
+            $table->string('country', 255);
+            $table->string('phone', 255);
+            $table->string('email', 500);
+            $table->string('website', 500);
+            $table->text('description');
+            $table->string('latitude', 500);
+            $table->string('longitude', 500);
             $table->timestamps();
         });
     }
@@ -25,3 +37,6 @@ return new class extends Migration
         Schema::dropIfExists('businesses');
     }
 };
+
+
+
