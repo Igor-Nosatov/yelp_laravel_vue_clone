@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('advertisements', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 255);
+            $table->text('description');
+            $table->string('image_url', 255);
+            $table->string('location', 255);
+            $table->string('phone_number', 255);
             $table->timestamps();
         });
     }
