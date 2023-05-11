@@ -11,6 +11,6 @@ class BusinessSeeder extends Seeder
      */
     public function run(): void
     {
-        Business::factory()->count(35)->create();
+
     }
 }
