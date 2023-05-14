@@ -54,53 +54,53 @@ services:
     networks:
       - app-network
 
-  redis:
-    container_name: redis
-    image: redis:latest
-    restart: always
-    tty: true
-    entrypoint: redis-server --appendonly yes --requirepass $REDIS_PASSWORD --maxmemory 512mb --maxmemory-policy allkeys-lru
-    ports:
-      - "6379:6379"
-    volumes:
-      - $DOCKERDIR/appdata/redis/data:/data
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    networks:
-      - app-network
+#   redis:
+#     container_name: redis
+#     image: redis:latest
+#     restart: always
+#     tty: true
+#     entrypoint: redis-server --appendonly yes --requirepass $REDIS_PASSWORD --maxmemory 512mb --maxmemory-policy allkeys-lru
+#     ports:
+#       - "6379:6379"
+#     volumes:
+#       - $DOCKERDIR/appdata/redis/data:/data
+#       - /etc/timezone:/etc/timezone:ro
+#       - /etc/localtime:/etc/localtime:ro
+#     networks:
+#       - app-network
 
-  rabbitmq:
-    image: rabbitmq:3.10.7-management
-    container_name: 'rabbitmq'
-    restart: always
-    tty: true
-    environment:
-      - RABBITMQ_DEFAULT_USER=rmuser
-      - RABBITMQ_DEFAULT_PASS=rmpassword
-      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}] disk_free_limit 2147483648
-    ports:
-      - 5672:5672
-      - 15672:15672
-    volumes:
-      - ./rabbitmq:/var/lib/rabbitmq
-    networks:
-      - app-network
+#   rabbitmq:
+#     image: rabbitmq:3.10.7-management
+#     container_name: 'rabbitmq'
+#     restart: always
+#     tty: true
+#     environment:
+#       - RABBITMQ_DEFAULT_USER=rmuser
+#       - RABBITMQ_DEFAULT_PASS=rmpassword
+#       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit log_levels [{connection,error},{default,error}] disk_free_limit 2147483648
+#     ports:
+#       - 5672:5672
+#       - 15672:15672
+#     volumes:
+#       - ./rabbitmq:/var/lib/rabbitmq
+#     networks:
+#       - app-network
 
-  mongodb:
-    image: mongo:6.0
-    container_name: mongodb
-    restart: always
-    tty: true
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=app_user
-      - MONGO_INITDB_ROOT_PASSWORD=app_password
-      - MONGO_INITDB_DATABASE=admin
-    ports:
-      - "27017:27017"
-    volumes:
-      - ~/mongo:/data/db
-    networks:
-      - app-network
+#   mongodb:
+#     image: mongo:6.0
+#     container_name: mongodb
+#     restart: always
+#     tty: true
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=app_user
+#       - MONGO_INITDB_ROOT_PASSWORD=app_password
+#       - MONGO_INITDB_DATABASE=admin
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - ~/mongo:/data/db
+#     networks:
+#       - app-network
 
 volumes:
   dbdata:
