@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto custom-card rounded-0" width="400" height="520">
+    <v-card class="mx-auto custom-card rounded-0" width="400" height="480">
         <v-card-title>
             <v-list>
                 <v-list-item prepend-avatar="https://cdn.vuetifyjs.com/images/john.png" title="Emily C."
@@ -7,7 +7,7 @@
                 </v-list-item>
             </v-list>
         </v-card-title>
-        <v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg" class="align-end" height="200px" width="400px"
+        <v-img src="https://cdn.vuetifyjs.com/images/cards/house.jpg" class="align-end" height="170px" width="400px"
             cover>
         </v-img>
         <v-card-item>
@@ -23,7 +23,7 @@
             </v-card-subtitle>
         </v-card-item>
         <v-card-text>
-            <p>Wandered in here for a light bite & smoothie & a healthier happy hour alternative after an</p>
+            <p>Wandered in here for a light bite & smoothie</p>
             <a href="https://example.com" target="_blank">
               Continue reading
             </a>
@@ -34,8 +34,8 @@
             <v-tooltip location="bottom">
                 <template v-slot:activator="{ props }">
                     <v-btn size="large" color="surface-variant" variant="text"
-                        v-bind="props">
-                        <v-icon>mdi-bow-arrow</v-icon>
+                        v-bind="props"   icon>
+                        <v-icon >mdi-bow-arrow</v-icon>
                     </v-btn>
                 </template>
                 <span> Useful</span>
@@ -43,7 +43,7 @@
             <v-tooltip location="bottom">
                 <template v-slot:activator="{ props }">
                     <v-btn size="large" color="surface-variant" variant="text"
-                        v-bind="props">
+                        v-bind="props"   icon>
                         <v-icon>mdi-emoticon-outline</v-icon>
                     </v-btn>
                 </template>
@@ -52,7 +52,7 @@
             <v-tooltip location="bottom">
                 <template v-slot:activator="{ props }">
                     <v-btn class=" tolltip-btn" size="large" color="surface-variant" variant="text"
-                        v-bind="props">
+                        v-bind="props"  icon>
                         <v-icon>mdi-emoticon-cool-outline</v-icon>
                     </v-btn>
                 </template>
