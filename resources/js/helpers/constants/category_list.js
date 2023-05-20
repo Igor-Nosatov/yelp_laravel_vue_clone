@@ -98,3 +98,46 @@ export const ADDITIONAL_CATEGORY_LIST = [
         value: 'mass-media',
       },
 ];
+
+export const ICON_CATEGORY_LIST = [
+    {
+        icon: 'mdi-food-turkey',
+        color: 'error',
+        title: 'Restaurants',
+      },
+      {
+        icon: 'mdi-storefront-outline',
+        color: 'error',
+        title: 'Shopping',
+      },
+      {
+        icon: 'mdi-weather-night',
+        color: 'error',
+        title: 'Nightlife',
+      },
+      {
+        icon: 'mdi-beach',
+        color: 'error',
+        title: 'Active Life',
+      },
+      {
+        icon: 'mdi-face-woman-shimmer-outline',
+        color: 'error',
+        title: 'Beauty & Spas',
+      },
+      {
+        icon: 'mdi-train-car-autorack',
+        color: 'error',
+        title: 'Automotive',
+      },
+      {
+        icon: 'mdi-account-wrench',
+        color: 'error',
+        title: 'Home Services',
+      },
+      {
+        icon: 'mdi-office-building-marker-outline',
+        color: 'error',
+        title: 'Hotels & Travel',
+      },
+]

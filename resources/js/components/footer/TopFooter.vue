@@ -1,25 +1,25 @@
 <template>
     <v-row class="top-footer">
         <v-col cols="3">
-          <h6 class="text-h6">About</h6>
+          <h6 class="text-h6 text-center font-weight-bold">About</h6>
           <v-card class="mx-auto" max-width="300">
             <v-list :items="listAbout"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
-          <h6 class="text-h6">Discover</h6>
+          <h6 class="text-h6 text-center font-weight-bold">Discover</h6>
           <v-card class="mx-auto" max-width="300">
             <v-list :items="listDiscover"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
-          <h6 class="text-h6">Yelp for Business</h6>
+          <h6 class="text-h6 text-center font-weight-bold">Yelp for Business</h6>
           <v-card class="mx-auto" max-width="300">
             <v-list :items="listBusiness"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
-          <h6 class="text-h6">Languages</h6>
+          <h6 class="text-h6 text-center font-weight-bold">Languages</h6>
           <v-select
             v-model="selectListLanguage"
             :items="listLanguage"
@@ -27,7 +27,7 @@
             item-value="value"
             label="Select Language"
           ></v-select>
-          <h6 class="text-h6">Countries</h6>
+          <h6 class="text-h6 text-center font-weight-bold">Countries</h6>
           <v-select
             v-model="selectListCountry"
             :items="listCountry"
