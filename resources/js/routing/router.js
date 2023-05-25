@@ -5,8 +5,8 @@ import {
 import Home from "../views/Home.vue";
 import SignUp from "../views/SignUp.vue";
 import Login from "../views/Login.vue";
-import BusinessCatalog from "../views/BusinessCatalog.vue";
-import BusinessCatalogItem from "../views/BusinessCatalogItem.vue";
+import Catalog from "../views/BusinessCatalog.vue";
+import CatalogItem from "../views/BusinessCatalogItem.vue";
 import Review from "../views/Review.vue";
 import Account from "../views/Account.vue";
 import Collection from "../views/Collection.vue";
@@ -40,12 +40,12 @@ export default () =>
             {
                 path: "/catalog",
                 name: "catalog",
-                component: BusinessCatalog,
+                component: Catalog,
             },
             {
                 path: "/catalog/:id",
                 name: "catalog-item",
-                component: BusinessCatalogItem,
+                component: CatalogItem,
             },
             {
                 path: "/review",
@@ -88,13 +88,13 @@ export default () =>
                 component: CreateFormBusiness ,
             },
             {
-                path: "/blog",
-                name: "blog",
+                path: "/news",
+                name: "news",
                 component: Blog ,
             },
             {
-                path: "/blog/:id",
-                name: "blog-item",
+                path: "/news/:id",
+                name: "news-item",
                 component: BlogItem ,
             },
         ],

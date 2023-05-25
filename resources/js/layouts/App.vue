@@ -1,9 +1,7 @@
 <template>
   <Header1 />
   <v-row class="router-view">
-    <v-col cols="1"></v-col>
-    <v-col cols="10"><router-view /></v-col>
-    <v-col cols="1"></v-col>
+    <v-col cols="12"><router-view /></v-col>
   </v-row>
   <TopFooter />
   <BottomFooter />

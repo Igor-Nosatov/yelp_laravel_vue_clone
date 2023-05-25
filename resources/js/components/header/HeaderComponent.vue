@@ -80,7 +80,6 @@
     background-color:rgb(177, 177, 177);
     background-size:cover!important;
     height: 110px;
-    width:100%!important;
 }
 .logo-img{
     padding-top: 5px;
