@@ -3,8 +3,8 @@
   <v-row class="router-view">
     <v-col cols="12"><router-view /></v-col>
   </v-row>
-  <TopFooter />
-  <BottomFooter />
+  <TopFooter class="background-grey"/>
+  <BottomFooter  class="background-grey"/>
 </template>
 
 <script>
@@ -33,5 +33,9 @@ export default {
   margin-top: 100px;
   margin-bottom: 100px;
   min-height: 400px;
+}
+
+.background-grey{
+    background-color: #e3e3e7;
 }
 </style>

@@ -9,4 +9,6 @@
     </v-row>
   </template>
 
-
+.background-grey{
+    background-color: #e3e3e7;
+}

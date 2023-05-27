@@ -2,20 +2,20 @@
     <v-row class="top-footer">
         <v-col cols="3">
           <h6 class="text-h6 text-center font-weight-bold">About</h6>
-          <v-card class="mx-auto" max-width="300">
-            <v-list :items="listAbout"></v-list>
+          <v-card class="mx-auto background-grey" max-width="300">
+            <v-list :items="listAbout" class="background-grey"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
           <h6 class="text-h6 text-center font-weight-bold">Discover</h6>
-          <v-card class="mx-auto" max-width="300">
-            <v-list :items="listDiscover"></v-list>
+          <v-card class="mx-auto background-grey" max-width="300">
+            <v-list :items="listDiscover" class="background-grey"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
           <h6 class="text-h6 text-center font-weight-bold">Yelp for Business</h6>
-          <v-card class="mx-auto" max-width="300">
-            <v-list :items="listBusiness"></v-list>
+          <v-card class="mx-auto background-grey" max-width="300">
+            <v-list :items="listBusiness" class="background-grey"></v-list>
           </v-card>
         </v-col>
         <v-col cols="3">
@@ -70,3 +70,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.background-grey{
+    background-color: #e3e3e7;
+}
+</style>
