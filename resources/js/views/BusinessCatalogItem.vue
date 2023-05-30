@@ -5,11 +5,11 @@
         <v-col cols="6">
           <h2 class="text-h2 text-left">Columbus Burgers</h2>
           <div class="d-flex flex-row justify-left">
-            <v-icon size="x-large" class="feedback-icon">mdi-star-box</v-icon>
-            <v-icon size="x-large" class="feedback-icon">mdi-star-box</v-icon>
-            <v-icon size="x-large" class="feedback-icon">mdi-star-box</v-icon>
-            <v-icon size="x-large" class="feedback-icon">mdi-star-box</v-icon>
-            <v-icon size="x-large" class="feedback-icon">mdi-star-box</v-icon>
+            <v-icon size="small" class="feedback-icon">mdi-star-box</v-icon>
+            <v-icon size="small" class="feedback-icon">mdi-star-box</v-icon>
+            <v-icon size="small" class="feedback-icon">mdi-star-box</v-icon>
+            <v-icon size="small" class="feedback-icon">mdi-star-box</v-icon>
+            <v-icon size="small" class="feedback-icon">mdi-star-box</v-icon>
             <span class="text-reviews"> 4.4 (36 reviews)</span>
           </div>
           <p>
@@ -44,15 +44,254 @@
         </v-col>
         <v-col col="8">
           <div class="d-flex flex-row">
-            <v-btn class="ml-1 mr-1"> <v-icon>mdi-star</v-icon>Write a review</v-btn>
-            <v-btn class="ml-1 mr-1"> <v-icon>mdi-camera</v-icon>Add photo</v-btn>
-            <v-btn class="ml-1 mr-1"> <v-icon>mdi-share-circle</v-icon>Share</v-btn>
-            <v-btn class="ml-1 mr-1"> <v-icon>mdi-cloud-plus-outline</v-icon>Save</v-btn>
+            <v-btn class="ml-1 mr-1">
+              <v-icon>mdi-star</v-icon>Write a review</v-btn
+            >
+            <v-btn class="ml-1 mr-1">
+              <v-icon>mdi-camera</v-icon>Add photo</v-btn
+            >
+            <v-btn class="ml-1 mr-1">
+              <v-icon>mdi-share-circle</v-icon>Share</v-btn
+            >
+            <v-btn class="ml-1 mr-1">
+              <v-icon>mdi-cloud-plus-outline</v-icon>Save</v-btn
+            >
           </div>
         </v-col>
       </v-row>
       <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">Location & Hours</h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">
+            You Might Also Consider
+            <span class="tooltip-info">
+              Sponsored
+              <v-tooltip activator="parent" location="top"
+                >Business owners paid for these ads. For more information visit
+                <a href="">Yelp for Business</a>.</v-tooltip
+              >
+              <v-icon size="small" icon="mdi-information "></v-icon>
+            </span>
+          </h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">Amenities and More</h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">Help Improve Yelp</h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">About the Business</h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">Ask the Community</h6>
+        </v-col>
+      </v-row>
+      <v-divider></v-divider>
+      <v-row class="pt-5 pb-5">
+        <v-col cols="12">
+          <h6 class="text-h6 font-weight-bold">Recommended Reviews</h6>
+        </v-col>
 
+        <v-col cols="12">
+          <v-card>
+            <v-row class="pt-3 pb-3">
+              <v-col cols="6">
+                <v-list-item
+                  prepend-avatar="https://cdn.vuetifyjs.com/images/john.png"
+                  title="Collin L."
+                >
+                  <v-icon size="small">mdi-account-circle-outline</v-icon>
+                  <span class="pl-1 pr-1">0</span>
+                  <v-icon size="small">mdi-star-box</v-icon>
+                  <span class="pl-1 pr-1">0</span>
+                </v-list-item>
+              </v-col>
+              <v-col cols="6">
+                <v-card-subtitle class="pt-2 pb-2">
+                  <v-icon size="x-large">mdi-star-box</v-icon>
+                  <v-icon size="x-large">mdi-star-box</v-icon>
+                  <v-icon size="x-large">mdi-star-box</v-icon>
+                  <v-icon size="x-large">mdi-star-box</v-icon>
+                  <v-icon size="x-large">mdi-star-box</v-icon>
+                </v-card-subtitle>
+                <v-btn class="pl-4 pr-4 pt-3 pb-3 ml-5">add your review</v-btn>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col cols="12">
+          <v-row>
+            <v-col cols="4">
+              <h3 class="pl-5 font-weight-bold">Overall rating</h3>
+              <v-card-subtitle class="pt-2 pb-2">
+                <v-icon size="x-large">mdi-star-box</v-icon>
+                <v-icon size="x-large">mdi-star-box</v-icon>
+                <v-icon size="x-large">mdi-star-box</v-icon>
+                <v-icon size="x-large">mdi-star-box</v-icon>
+                <v-icon size="x-large">mdi-star-box</v-icon>
+              </v-card-subtitle>
+              <p  class="pl-5">319 reviews</p>
+            </v-col>
+            <v-col cols="8">
+              <div class="pt-2 pb-2">
+              <span>5 stars</span>  <v-progress-linear color="primary" model-value="90"></v-progress-linear>
+            </div><div  class="pt-2 pb-2">
+              <span>4 stars</span>  <v-progress-linear color="primary" model-value="70"></v-progress-linear>
+            </div><div  class="pt-2 pb-2">
+              <span>3 stars</span>  <v-progress-linear color="primary" model-value="50"></v-progress-linear>
+            </div><div  class="pt-2 pb-2">
+              <span>2 stars</span>  <v-progress-linear color="primary" model-value="20"></v-progress-linear>
+            </div><div  class="pt-2 pb-2">
+              <span>1 stars</span>  <v-progress-linear color="primary" model-value="10"></v-progress-linear>
+            </div>
+            </v-col>
+          </v-row>
+        </v-col>
+        <v-col cols="12">
+          <v-list-item
+            prepend-avatar="https://cdn.vuetifyjs.com/images/john.png"
+            title="Emily C."
+            subtitle="Added 4 photos"
+          >
+          </v-list-item>
+          <v-card-subtitle class="pt-2 pb-2">
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <span>3/8/2023</span>
+          </v-card-subtitle>
+          <p class="pt-2 pb-2">
+            The burgers were so amazing and good as what they looked. Definitely
+            a must go if you are craving for a burger. The selections were great
+            and its so cool. The Sunrise Burger was good. The patty is just
+            right and I enjoyed every bite of it. The service was good and very
+            nice place.
+          </p>
+          <v-row>
+            <v-col cols="5">
+              <div class="d-flex flex-row justify-space-evenly">
+                <v-btn density="compact" icon="mdi-lamp-outline"></v-btn>
+                <v-btn density="compact" icon="mdi-hand-clap"></v-btn>
+                <v-btn density="compact" icon="mdi-heart-cog-outline"></v-btn>
+                <v-btn
+                  density="compact"
+                  icon="mdi-emoticon-excited-outline"
+                ></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+          <img
+            src="../images/47456.jpg"
+            alt=""
+            class="catalog-img-item pt-6 pb-3"
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-list-item
+            prepend-avatar="https://cdn.vuetifyjs.com/images/john.png"
+            title="Emily C."
+            subtitle="Added 4 photos"
+          >
+          </v-list-item>
+          <v-card-subtitle class="pt-2 pb-2">
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <span>3/8/2023</span>
+          </v-card-subtitle>
+          <p class="pt-2 pb-2">
+            The burgers were so amazing and good as what they looked. Definitely
+            a must go if you are craving for a burger. The selections were great
+            and its so cool. The Sunrise Burger was good. The patty is just
+            right and I enjoyed every bite of it. The service was good and very
+            nice place.
+          </p>
+          <v-row>
+            <v-col cols="5">
+              <div class="d-flex flex-row justify-space-evenly">
+                <v-btn density="compact" icon="mdi-lamp-outline"></v-btn>
+                <v-btn density="compact" icon="mdi-hand-clap"></v-btn>
+                <v-btn density="compact" icon="mdi-heart-cog-outline"></v-btn>
+                <v-btn
+                  density="compact"
+                  icon="mdi-emoticon-excited-outline"
+                ></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+          <img
+            src="../images/47456.jpg"
+            alt=""
+            class="catalog-img-item pt-6 pb-3"
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-list-item
+            prepend-avatar="https://cdn.vuetifyjs.com/images/john.png"
+            title="Emily C."
+            subtitle="Added 4 photos"
+          >
+          </v-list-item>
+          <v-card-subtitle class="pt-2 pb-2">
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <v-icon size="small">mdi-star-box</v-icon>
+            <span>3/8/2023</span>
+          </v-card-subtitle>
+          <p class="pt-2 pb-2">
+            The burgers were so amazing and good as what they looked. Definitely
+            a must go if you are craving for a burger. The selections were great
+            and its so cool. The Sunrise Burger was good. The patty is just
+            right and I enjoyed every bite of it. The service was good and very
+            nice place.
+          </p>
+          <v-row>
+            <v-col cols="5">
+              <div class="d-flex flex-row justify-space-evenly">
+                <v-btn density="compact" icon="mdi-lamp-outline"></v-btn>
+                <v-btn density="compact" icon="mdi-hand-clap"></v-btn>
+                <v-btn density="compact" icon="mdi-heart-cog-outline"></v-btn>
+                <v-btn
+                  density="compact"
+                  icon="mdi-emoticon-excited-outline"
+                ></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+          <img
+            src="../images/47456.jpg"
+            alt=""
+            class="catalog-img-item pt-6 pb-3"
+          />
+        </v-col>
+      </v-row>
+
+      <v-divider></v-divider>
       <v-row class="pagination_block pt-5">
         <v-col cols="6">
           <v-pagination v-model="page" :length="4" rounded="0"></v-pagination>
@@ -116,7 +355,6 @@
   </v-row>
   <v-row justify="center">
     <v-col cols="8">
-      <v-divider></v-divider>
       <v-row class="pt-8 pb-16">
         <v-col cols="12">
           <h2>Collections Including Off the Grid: Fort Mason Center</h2>
@@ -378,5 +616,14 @@
 }
 .line-up {
   border: 1px solid #e9e5e5;
+}
+
+.tooltip-info {
+  color: #b6b5b5;
+  font-size: 16px;
+}
+
+.catalog-img-item {
+  height: 300px;
 }
 </style>
