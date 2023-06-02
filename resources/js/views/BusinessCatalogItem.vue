@@ -59,50 +59,257 @@
           </div>
         </v-col>
       </v-row>
-      <v-divider></v-divider>
       <v-row class="pt-5 pb-5">
         <v-col cols="12">
-          <h6 class="text-h6 font-weight-bold">Location & Hours</h6>
+          <h6 class="text-h6 font-weight-bold pb-4">Menu</h6>
+          <p class="font-weight-bold pb-4">Popular dishes</p>
+          <v-row class="pb-8 pt-2">
+            <v-col cols="3">
+              <v-card class="menu-card rounded-0">
+                <img
+                  src="./../images/47456.jpg"
+                  alt=""
+                  height="150"
+                  class="menu-card-img"
+                />
+                <v-card-title class="text-subtitle-1">
+                  Queso De Mayo
+                </v-card-title>
+                <v-card-subtitle>
+                  <a href="" class="text-decoration-none pr-2">7 photos </a>
+                  <a href="" class="text-decoration-none pr-2">7 Reviews</a>
+                </v-card-subtitle>
+              </v-card>
+            </v-col>
+            <v-col cols="3">
+              <v-card class="menu-card rounded-0">
+                <img
+                  src="./../images/47456.jpg"
+                  alt=""
+                  height="150"
+                  class="menu-card-img"
+                />
+                <v-card-title class="text-subtitle-1">
+                  Queso De Mayo
+                </v-card-title>
+                <v-card-subtitle>
+                  <a href="" class="text-decoration-none pr-2">7 photos </a>
+                  <a href="" class="text-decoration-none pr-2">7 Reviews</a>
+                </v-card-subtitle>
+              </v-card>
+            </v-col>
+            <v-col cols="3">
+              <v-card class="menu-card rounded-0">
+                <img
+                  src="./../images/47456.jpg"
+                  alt=""
+                  height="150"
+                  class="menu-card-img"
+                />
+                <v-card-title class="text-subtitle-1">
+                  Queso De Mayo
+                </v-card-title>
+                <v-card-subtitle>
+                  <a href="" class="text-decoration-none pr-2">7 photos </a>
+                  <a href="" class="text-decoration-none pr-2">7 Reviews</a>
+                </v-card-subtitle>
+              </v-card>
+            </v-col>
+            <v-col cols="3">
+              <v-card class="menu-card rounded-0">
+                <img
+                  src="./../images/47456.jpg"
+                  alt=""
+                  height="150"
+                  class="menu-card-img"
+                />
+                <v-card-title class="text-subtitle-1">
+                  Queso De Mayo
+                </v-card-title>
+                <v-card-subtitle>
+                  <a href="" class="text-decoration-none pr-2">7 photos </a>
+                  <a href="" class="text-decoration-none pr-2">7 Reviews</a>
+                </v-card-subtitle>
+              </v-card>
+            </v-col>
+          </v-row>
+          <div class="d-flex flex-row justify-start">
+            <v-btn class="text-capitalize"
+              ><v-icon>mdi-link-box-variant-outline</v-icon>Website Menu</v-btn
+            >
+            <v-btn class="text-capitalize ml-3"
+              ><v-icon>mdi-silverware</v-icon>Full menu</v-btn
+            >
+          </div>
         </v-col>
       </v-row>
       <v-divider></v-divider>
       <v-row class="pt-5 pb-5">
         <v-col cols="12">
-          <h6 class="text-h6 font-weight-bold">
-            You Might Also Consider
-            <span class="tooltip-info">
-              Sponsored
-              <v-tooltip activator="parent" location="top"
-                >Business owners paid for these ads. For more information visit
-                <a href="">Yelp for Business</a>.</v-tooltip
-              >
-              <v-icon size="small" icon="mdi-information "></v-icon>
-            </span>
-          </h6>
+          <h6 class="text-h6 font-weight-bold">Location & Hours</h6>
+          <v-row class="pt-4 pb-7">
+            <v-col cols="6">
+              <img
+                src="../images/mini-map.png"
+                alt=""
+                height="170"
+                class="img-map-locations"
+              />
+              <div class="d-flex flex-row justify-space-between">
+                <div class="mt-3">
+                  <a href="" class="text-decoration-none pt-2">455 Market St</a>
+                  <p class="font-weight-bold pt-2">
+                    Market & 1st San Francisco, CA 94105
+                  </p>
+                  <p class="pt-2">
+                    Front St & Fremont St Financial District, SoMa
+                  </p>
+                </div>
+                <div class="mt-3">
+                  <v-btn class="text-capitalize text-subtitle-1 mr-3 pt-3 pb-8"
+                    >Get directions</v-btn
+                  >
+                </div>
+              </div>
+            </v-col>
+            <v-col cols="6">
+              <v-row class="pt-2">
+                <v-col cols="2" class="pr-2"> Mon </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="2" class="pr-2"> Tue </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="2" class="pr-2"> Wed </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="2" class="pr-2"> Thu </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="2" class="pr-2"> Fri </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="2" class="pr-2"> Sat </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+
+              <v-row>
+                <v-col cols="2" class="pr-2"> Sun </v-col>
+                <v-col cols="10"> 10:00 AM - 12:00 AM (Next day) </v-col>
+              </v-row>
+              <v-btn class="pt-3 pb-8 mt-3">
+                <v-icon>mdi-lead-pencil</v-icon>
+                Edit business info
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
       <v-divider></v-divider>
       <v-row class="pt-5 pb-5">
         <v-col cols="12">
           <h6 class="text-h6 font-weight-bold">Amenities and More</h6>
-        </v-col>
-      </v-row>
-      <v-divider></v-divider>
-      <v-row class="pt-5 pb-5">
-        <v-col cols="12">
-          <h6 class="text-h6 font-weight-bold">Help Improve Yelp</h6>
+
+          <v-row class="pt-4 pb-4">
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-bottle-tonic-plus-outline</v-icon>Health
+              ScorePASS Powered by Hazel Analytics</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-motorbike</v-icon>Offers Delivery</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-food-apple</v-icon>Vegan Options</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-food-turkey</v-icon>Casual,
+              Trendy</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-teddy-bear</v-icon>Good For Kids</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-wifi-arrow-up-down</v-icon>Free
+              Wi-Fi</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-car-brake-parking</v-icon>Street
+              Parking</v-col
+            >
+            <v-col cols="6"
+              ><v-icon class="pr-3">mdi-sofa-single-outline</v-icon>Outdoor
+              Seating</v-col
+            >
+          </v-row>
         </v-col>
       </v-row>
       <v-divider></v-divider>
       <v-row class="pt-5 pb-5">
         <v-col cols="12">
           <h6 class="text-h6 font-weight-bold">About the Business</h6>
+          <p class="pb-5 pt-5">
+            Melty comfort food fast. Enjoy handcrafted, angus-wagyu blend
+            MeltBurgers, great takes on grilled cheese, melty mac 'n' cheese,
+            handspun milkshakes, crispy fries and much more. We aim to deliver
+            an "I Love It Here Experience" to every guest. Order from our
+            friendly team members, in-store self…
+          </p>
+          <v-btn class="pt-3 pb-7"> Read more </v-btn>
         </v-col>
       </v-row>
       <v-divider></v-divider>
       <v-row class="pt-5 pb-5">
         <v-col cols="12">
-          <h6 class="text-h6 font-weight-bold">Ask the Community</h6>
+          <div class="d-flex flex-row justify-space-between">
+            <h6 class="text-h6 font-weight-bold">Ask the Community</h6>
+            <p>
+              <a href="" class="text-decoration-none">Ask a question</a>
+              <v-icon size="x-large">mdi-plus</v-icon>
+            </p>
+          </div>
+          <v-row class="pt-4">
+            <v-col cols="1">
+              <p class="font-weight-bold">Q:</p>
+            </v-col>
+            <v-col cols="11">
+              <p>
+                Oh no. Did you guys take yourselves off of Grubhub?
+              </p>
+            </v-col>
+          </v-row>
+          <v-row class="pb-5">
+            <v-col cols="1">
+              <p class="font-weight-bold">A:</p>
+            </v-col>
+            <v-col cols="11">
+                <v-row>
+                    <v-col cols="12">
+                        <p>
+                            Hi! No we did not. But when it gets a little too busy for us, we
+                            do pause from taking orders from our online ordering platforms
+                            to give our selves a chance to catch up for those that are in
+                            line at the shop. Thanks for your inquiry and we hope to…
+                            <a href="" class="text-decoration-none">more </a>
+                          </p>
+                    </v-col>
+                    <v-col cols="12">
+                        <span class="pr-2">John E., Business Manager</span>
+                        <v-icon class="pr-3">mdi-circle-small</v-icon>
+                        <span class="pr-2">3 years ago</span>
+                        <v-icon class="pr-3">mdi-circle-small</v-icon>
+                        <span class="pr-2">3 people found this helpful</span>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-btn>See question details</v-btn>
+                    </v-col>
+                </v-row>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
       <v-divider></v-divider>
@@ -149,20 +356,44 @@
                 <v-icon size="x-large">mdi-star-box</v-icon>
                 <v-icon size="x-large">mdi-star-box</v-icon>
               </v-card-subtitle>
-              <p  class="pl-5">319 reviews</p>
+              <p class="pl-5">319 reviews</p>
             </v-col>
             <v-col cols="8">
               <div class="pt-2 pb-2">
-              <span>5 stars</span>  <v-progress-linear color="primary" model-value="90"></v-progress-linear>
-            </div><div  class="pt-2 pb-2">
-              <span>4 stars</span>  <v-progress-linear color="primary" model-value="70"></v-progress-linear>
-            </div><div  class="pt-2 pb-2">
-              <span>3 stars</span>  <v-progress-linear color="primary" model-value="50"></v-progress-linear>
-            </div><div  class="pt-2 pb-2">
-              <span>2 stars</span>  <v-progress-linear color="primary" model-value="20"></v-progress-linear>
-            </div><div  class="pt-2 pb-2">
-              <span>1 stars</span>  <v-progress-linear color="primary" model-value="10"></v-progress-linear>
-            </div>
+                <span>5 stars</span>
+                <v-progress-linear
+                  color="primary"
+                  model-value="90"
+                ></v-progress-linear>
+              </div>
+              <div class="pt-2 pb-2">
+                <span>4 stars</span>
+                <v-progress-linear
+                  color="primary"
+                  model-value="70"
+                ></v-progress-linear>
+              </div>
+              <div class="pt-2 pb-2">
+                <span>3 stars</span>
+                <v-progress-linear
+                  color="primary"
+                  model-value="50"
+                ></v-progress-linear>
+              </div>
+              <div class="pt-2 pb-2">
+                <span>2 stars</span>
+                <v-progress-linear
+                  color="primary"
+                  model-value="20"
+                ></v-progress-linear>
+              </div>
+              <div class="pt-2 pb-2">
+                <span>1 stars</span>
+                <v-progress-linear
+                  color="primary"
+                  model-value="10"
+                ></v-progress-linear>
+              </div>
             </v-col>
           </v-row>
         </v-col>
@@ -625,5 +856,14 @@
 
 .catalog-img-item {
   height: 300px;
+}
+
+.menu-card {
+  height: 250px;
+}
+
+.menu-card-img,
+.img-map-locations {
+  width: 100%;
 }
 </style>
