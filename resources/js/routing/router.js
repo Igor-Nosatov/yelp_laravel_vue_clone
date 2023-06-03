@@ -8,15 +8,18 @@ import Login from "../views/Login.vue";
 import Catalog from "../views/BusinessCatalog.vue";
 import CatalogItem from "../views/BusinessCatalogItem.vue";
 import Review from "../views/Review.vue";
-import Account from "../views/Account.vue";
+import Profile from "../views/Account/Profile.vue";
+import Password from "../views/Account/Password.vue";
+import SocialNetworks from "../views/Account/SocialNetworks.vue";
 import Collection from "../views/Collection.vue";
 import Event from "../views/Event.vue";
 import EventItem from "../views/EventItem.vue";
 import EventCreate from "../views/EventCreate.vue";
 import CreateFormBusiness from "../views/CreateFormBusiness.vue";
-import EditFormBusiness from "../views/EditFormBusiness.vue";
 import Blog from "../views/Blog.vue";
 import BlogItem from "../views/BlogItem.vue";
+import Notifications from "../views/Account/Notifications.vue";
+import PrivacySettings from "../views/Account/PrivacySettings.vue";
 
 export default () =>
     createRouter({
@@ -53,9 +56,29 @@ export default () =>
                 component: Review,
             },
             {
-                path: "/account",
-                name: "account",
-                component: Account,
+                path: "/profile",
+                name: "profile",
+                component: Profile,
+            },
+            {
+                path: "/password",
+                name: "password",
+                component: Password,
+            },
+            {
+                path: "/social-networks",
+                name: "socialNetworks",
+                component:  SocialNetworks,
+            },
+            {
+                path: "/notifications",
+                name: "notifications",
+                component:Notifications
+            },
+            {
+                path: "/privacy-settings",
+                name: "privacySettings",
+                component:  PrivacySettings,
             },
             {
                 path: "/collection",
@@ -76,11 +99,6 @@ export default () =>
                 path: "/event-create",
                 name: "event-create",
                 component: EventCreate,
-            },
-            {
-                path: "/edit-business/:id",
-                name: "edit-business",
-                component: EditFormBusiness,
             },
             {
                 path: "/create-business",
