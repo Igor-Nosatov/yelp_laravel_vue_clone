@@ -11,10 +11,6 @@ import Review from "../views/Review.vue";
 import Profile from "../views/Account/Profile.vue";
 import Password from "../views/Account/Password.vue";
 import SocialNetworks from "../views/Account/SocialNetworks.vue";
-import Collection from "../views/Collection.vue";
-import Event from "../views/Event.vue";
-import EventItem from "../views/EventItem.vue";
-import EventCreate from "../views/EventCreate.vue";
 import CreateFormBusiness from "../views/CreateFormBusiness.vue";
 import Blog from "../views/Blog.vue";
 import BlogItem from "../views/BlogItem.vue";
@@ -79,26 +75,6 @@ export default () =>
                 path: "/privacy-settings",
                 name: "privacySettings",
                 component:  PrivacySettings,
-            },
-            {
-                path: "/collection",
-                name: "collection",
-                component: Collection,
-            },
-            {
-                path: "/event",
-                name: "event",
-                component: Event,
-            },
-            {
-                path: "/event/:id",
-                name: "event-item",
-                component: EventItem,
-            },
-            {
-                path: "/event-create",
-                name: "event-create",
-                component: EventCreate,
             },
             {
                 path: "/create-business",

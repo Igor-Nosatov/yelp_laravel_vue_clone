@@ -1,7 +1,7 @@
 <template>
     <v-row class="bottom-footer">
       <v-col cols="9">
-        <span class="text-subtitle-2"
+        <span class="text-subtitle-2 pl-12 font-weight-bold"
           >Copyright © 2004–2023 Yelp Inc. Yelp, Yelp logo, Yelp burst and
           related marks are registered trademarks of Yelp.</span
         >

@@ -30,8 +30,6 @@ export default {
   width: 100% !important;
 }
 .router-view {
-  margin-top: 100px;
-  margin-bottom: 100px;
   min-height: 400px;
 }
 
