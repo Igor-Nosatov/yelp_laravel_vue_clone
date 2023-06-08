@@ -1,6 +1,6 @@
 <template>
-    <v-row class="top-footer" justify="center" >
-        <v-col cols="10">
+    <v-row class="top-footer pt-8" justify="center" >
+        <v-col cols="8">
             <v-row>
                 <v-col cols="3">
                     <h6 class="text-h6 pl-4 font-weight-bold pt-3 pb-2 text-left">About</h6>
@@ -77,6 +77,6 @@ export default {
 </script>
 <style scoped>
 .background-grey{
-    background-color: #e3e3e7;
+    background-color: #efeff1;
 }
 </style>
