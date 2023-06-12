@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -25,9 +26,19 @@ class Account extends Model
         'user_id',
         'phone_number',
     ];
+    protected $casts = [
+        'profile_image' => 'string',
+        'user_id' => 'integer',
+        'phone_number' => 'string',
+    ];
 
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function language():BelongsTo
+    {
+        return $this->belongsTo(language::class);
     }
 }

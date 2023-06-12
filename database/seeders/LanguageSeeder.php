@@ -40,6 +40,5 @@ class LanguageSeeder extends Seeder
         ];
 
         DB::table('languages')->insert($languages);
-
     }
 }
