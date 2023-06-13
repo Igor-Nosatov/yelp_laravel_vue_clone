@@ -41,10 +41,10 @@ services:
     restart: always
     tty: true
     environment:
-      MYSQL_DATABASE: 'management_system'
+      MYSQL_DATABASE: 'yelp'
       MYSQL_USER: 'admin'
-      MYSQL_PASSWORD: 'waefmk4awegr3w'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
     ports:
       - '3306:3306'
     expose:

@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('location', 255);
             $table->string('image', 255);
             $table->string('url', 255);
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

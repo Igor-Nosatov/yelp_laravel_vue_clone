@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Database\Seeders;
 
@@ -17,8 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(FeatureSeeder::class);
         $this->call(LanguageSeeder::class);
-        $this->call(CountrySeeder::class);
-
-
+        $this->call(UserSeeder::class);
+        $this->call(AccountSeeder::class);
+        $this->call(BusinessSeeder::class);
     }
 }

@@ -39,8 +39,9 @@ return new class extends Migration
             $table->boolean('direct_messages')->nullable()->comment('Allow business owners to send you direct messages in response to your review.');
             $table->boolean('ads')->nullable()->comment('Allow Yelp to target ads on other sites and apps.');
             $table->enum('business_visibility', ['profile', 'demographics', 'basic'])->comment('These settings govern how businesses will see actions you take through Yelp, such as, mobile calls, directions requests, map views, and visits to a business’s website.');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('primary_language_id')->constrained();
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('language_id')->constrained();
             $table->timestamps();
         });
     }
