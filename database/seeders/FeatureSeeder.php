@@ -1,4 +1,5 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Seeders;
 
@@ -21,13 +22,11 @@ class FeatureSeeder extends Seeder
             ['name' => 'Wi-Fi'],
             ['name' => 'Smoking'],
         ];
-        DB::table('categories')->insert($features);
+        DB::table('features')->insert($features);
 
         $features1 = [
             [ 'name' => 'Reservations','parent_id' => 1 ],
             [ 'name' => 'Waitlist','parent_id' => 1 ],
-            [ 'name' => 'Open At: 12:11 PM','parent_id' => 1 ],
-            [ 'name' => 'Open Now 10:55 PM','parent_id' => 1 ],
             [ 'name' => 'Takes Reservations','parent_id' => 1 ],
             [ 'name' => 'Accepts Credit Cards','parent_id' => 1 ],
             [ 'name' => 'Accepts Cryptocurrency','parent_id' => 1 ],
@@ -53,7 +52,7 @@ class FeatureSeeder extends Seeder
             [ 'name' => 'Proof of vaccination required','parent_id' => 1 ],
             [ 'name' => 'All staff fully vaccinated','parent_id' => 1 ],
         ];
-        DB::table('categories')->insert($features1);
+        DB::table('features')->insert($features1);
 
 
         $features2 = [
@@ -61,7 +60,7 @@ class FeatureSeeder extends Seeder
             ['name' => 'Beer & Wine Only', 'parent_id' => 2],
             ['name' => 'Good For Happy Hour', 'parent_id' => 2],
         ];
-        DB::table('categories')->insert($features2);
+        DB::table('features')->insert($features2);
 
         $features3 =[
             ['name' => 'Breakfast', 'parent_id' => 3],
@@ -71,6 +70,6 @@ class FeatureSeeder extends Seeder
             ['name' => 'Dessert', 'parent_id' => 3],
             ['name' => 'Late Night', 'parent_id' => 3],
         ];
-        DB::table('categories')->insert($features3);
+        DB::table('features')->insert($features3);
     }
 }

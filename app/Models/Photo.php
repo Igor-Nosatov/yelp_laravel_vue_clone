@@ -22,13 +22,11 @@ class Photo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
         'path',
         'business_id'
     ];
 
     protected $casts = [
-        'name'=> 'string',
         'path'=> 'string',
         'business_id'=> 'integer',
     ];

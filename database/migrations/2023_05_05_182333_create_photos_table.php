@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
             $table->string('path', 255);
             $table->foreignId('business_id')->constrained();
             $table->timestamps();

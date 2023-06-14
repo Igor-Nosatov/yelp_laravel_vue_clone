@@ -1,7 +1,9 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'rating' => fake()->randomNumber(5),
+            'content'  => fake()->sentence(45),
+            'user_id' => User::latest()->first()->id,
+            'business_id' => 1
         ];
     }
 }

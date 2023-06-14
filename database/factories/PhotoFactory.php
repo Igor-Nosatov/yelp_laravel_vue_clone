@@ -1,7 +1,10 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Factories;
 
+use App\Models\Business;
+use App\Models\Photo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PhotoFactory extends Factory
 {
+    protected $model = Photo::class;
     /**
      * Define the model's default state.
      *
@@ -16,8 +20,15 @@ class PhotoFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            //
-        ];
+            $faker = \Faker\Factory::create();
+            $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
+            return [
+                'path' => $faker->imageUrl($width = 800, $height = 600),
+                'business_id' => 1
+            ];
     }
 }
+
+
+
+

@@ -37,6 +37,7 @@ class Business extends Model
 
     protected $fillable = [
         'name',
+        'price_level',
         'address',
         'city',
         'state',
@@ -53,6 +54,7 @@ class Business extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'integer',
+        'price_level' => 'string',
         'address'=> 'string',
         'city'=> 'string',
         'state'=> 'string',

@@ -1,9 +1,10 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Business;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Business>
  */
@@ -19,6 +20,7 @@ class BusinessFactory extends Factory
     {
         return [
             'name' => fake()->company,
+            'price_level' => fake()->randomElement(['low', 'average','high', 'luxury']),
             'address' => fake()->address,
             'city' => fake()->city,
             'state' => fake()->state,
@@ -32,4 +34,5 @@ class BusinessFactory extends Factory
             'longitude' => fake()->longitude,
         ];
     }
+
 }

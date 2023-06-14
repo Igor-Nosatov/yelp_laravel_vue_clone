@@ -1,6 +1,5 @@
 <?php
-
-
+declare (strict_types = 1);
 
 namespace Database\Factories;
 
@@ -14,8 +13,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class AccountFactory extends Factory
 {
-
-        /**
+    /**
      * The name of the factory's corresponding model.
      *
      * @var string

@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(AccountSeeder::class);
         $this->call(BusinessSeeder::class);
+        $this->call(PhotoSeeder::class);
+        $this->call(ReviewSeeder::class);
     }
 }
