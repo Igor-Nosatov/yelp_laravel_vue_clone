@@ -1,19 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers;
 
-use App\Repositories\Review\ReviewInterface;
+use App\Repositories\Event\EventInterface;
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class EventController extends Controller
 {
-    private $reviewRepository;
+    private $eventRepository;
 
-    public function __construct(ReviewInterface $reviewRepository)
+    public function __construct(EventInterface $eventRepository)
     {
-        $this->reviewRepository = $reviewRepository;
+        $this->eventRepository = $eventRepository;
     }
     public function index()
     {

@@ -1,0 +1,286 @@
+{
+    "get": {
+        "summary": "Return list of filters",
+        "responses": {
+            "200": {
+                "description": "List of filters",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string,",
+                                    "example": "Return list of filters"
+                                },
+                                "status": {
+                                    "type": "int,",
+                                    "example": 200
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "pool_type": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 0,
+                                                    "name": "Public Pools"
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "name": "Hotel Pools"
+                                                }
+                                            ]
+                                        },
+                                        "specific_pool_type": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lane Pool"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Wave Pool"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Dive Pool"
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "name": "Infant Pool"
+                                                },
+                                                {
+                                                    "id": 5,
+                                                    "name": "Therapy Pool"
+                                                },
+                                                {
+                                                    "id": 6,
+                                                    "name": "Main Pool"
+                                                }
+                                            ]
+                                        },
+                                        "temperature": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 0,
+                                                    "from": null,
+                                                    "to": 27
+                                                },
+                                                {
+                                                    "id": 1,
+                                                    "from": 28,
+                                                    "to": 29
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "from": 30,
+                                                    "to": 31
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "from": 32,
+                                                    "to": 33
+                                                },
+                                                {
+                                                    "id": 4,
+                                                    "from": 34,
+                                                    "to": null
+                                                }
+                                            ]
+                                        },
+                                        "accebility_tags": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lazy River"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Waves"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Small Slides"
+                                                }
+                                            ]
+                                        },
+                                        "features_tags": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lazy River"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Waves"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Small Slides"
+                                                }
+                                            ]
+                                        },
+                                        "pool_activity_tags": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lazy River"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Waves"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Small Slides"
+                                                }
+                                            ]
+                                        },
+                                        "food_and_drink_tags": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lazy River"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Waves"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Small Slides"
+                                                }
+                                            ]
+                                        },
+                                        "waterslide_tags": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Lazy River"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Waves"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Small Slides"
+                                                }
+                                            ]
+                                        },
+                                        "sort": {
+                                            "type": "array",
+                                            "example": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Most Relaxing"
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "name": "Best for Families"
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "name": "Most Accesible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "404": {
+                "description": "Requested object not found.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string,",
+                                    "example": "Requested object not found"
+                                },
+                                "status": {
+                                    "type": "int,",
+                                    "example": 404
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "409": {
+                "description": "Request could not be processed because of conflict.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string,",
+                                    "example": "Request could not be processed because of conflict"
+                                },
+                                "status": {
+                                    "type": "int,",
+                                    "example": 409
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "429": {
+                "description": "Rate limit exceed.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string,",
+                                    "example": "Rate limit exceed"
+                                },
+                                "status": {
+                                    "type": "int,",
+                                    "example": 429
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "500": {
+                "description": "The server encountered an internal error or misconfiguration and was unable to complete your request.",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string,",
+                                    "example": "The server encountered an internal error or misconfiguration and was unable to complete your request"
+                                },
+                                "status": {
+                                    "type": "int,",
+                                    "example": 500
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

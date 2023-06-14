@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Blog\BlogInterface;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private $blogRepository;
+
+    public function __construct(BlogInterface $blogRepository)
+    {
+        $this->blogRepository = $blogRepository;
+    }
     public function index()
     {
         //
@@ -21,19 +25,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return response()->json([
-            'status' => 'success',
-            'data' =>
-            'message' => ' created successfully'
-        ], Response::HTTP_CREATED);
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -44,13 +36,6 @@ class BlogController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.

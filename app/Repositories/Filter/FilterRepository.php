@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Home;
+namespace App\Repositories\Filter;
 
-class HomeRepository implements HomeInterface
+class FilterRepository implements FilterInterface
 {
     public function getAll(): array
     {

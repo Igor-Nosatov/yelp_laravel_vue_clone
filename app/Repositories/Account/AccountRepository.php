@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories\Auth;
 
-class AuthRepository implements AuthInterface
+class  AccountRepository implements AuthInterface
 {
     public function getAll(): array
     {

@@ -26,8 +26,10 @@ class AccountFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+            $faker->addProvider(new \Smknstd\FakerPicsumImages\FakerPicsumImagesProvider($faker));
       return [
-            'profile_image' => fake()->imageUrl(),
+            'profile_image' => $faker->imageUrl($width = 800, $height = 600),
             'phone_number' => fake()->phoneNumber,
             'first_name' => fake()->firstName,
             'last_name' => fake()->lastName,

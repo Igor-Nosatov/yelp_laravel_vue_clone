@@ -1,0 +1,499 @@
+{
+  "get": {
+    "summary": "Returns a list of facilities  with additional information.",
+    "parameters": [
+      {
+        "in": "query",
+        "name": "page",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": "Banff Rocky Mountain Resort"
+        },
+        "description": "Parameter page, filter by number page, for example param=1"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 2
+        },
+        "description": "Parameter limit, add custom pagination"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "Royal Canadian Lodge"
+        },
+        "description": "Search result, facility list by search request"
+      },
+      {
+        "in": "query",
+        "name": "temperature",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter temperature, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "pool_type",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter pool_type,filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "specific_pool_type",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter specific_pool_type, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "slide",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter slide, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "feature_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter feature_tags, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "diving_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter diving_tags,  filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "waterslide_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter waterslide_tags, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "food_and_drink_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter food_and_drink_tags, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "facility_accecibility_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter facility_accecibility_tags, filter value by  array of id, for example param=1,2,3"
+      },
+      {
+        "in": "query",
+        "name": "pool_accecibility_tags",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter pool_accecibility_tags, filter value by  array of id, for example param=1,2,3"
+      },
+
+
+      {
+        "in": "query",
+        "name": "family_friendly",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter family_friendly, filter value id, for example param=1"
+      },
+      {
+        "in": "query",
+        "name": "relaxation",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter relaxation, filter value id, for example param=1"
+      },
+      {
+        "in": "query",
+        "name": "accessibility",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 1
+        },
+        "description": "Parameter accessibility, filter value id, for example param=1"
+      },
+
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "example": 100
+        },
+        "description": "Parameter accessibility,filter value by id"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "example": 10
+        },
+        "description": "Parameter accessibility, , filter value by id"
+      },
+      {
+        "in": "query",
+        "name": "left_top_map_latitude",
+        "required": false,
+        "schema": {
+            "type": "float",
+            "example": 51.73977200
+        },
+        "description": "Parameter left-top-map-latitude, parameters for clustering the map"
+      },
+      {
+        "in": "query",
+        "name": "left_top_map_longitude",
+        "required": false,
+        "schema": {
+            "type": "float",
+            "example": -121.33745400
+        },
+        "description": "Parameter left-top-map-longitude, parameters for clustering the map"
+      },
+      {
+        "in": "query",
+        "name": "right_bottom_map_latitude",
+        "required": false,
+        "schema": {
+            "type": "float",
+            "example": 51.09185900
+         },
+        "description": "Parameter right-bottom-map-latitude, parameters for clustering the map"
+      },
+      {
+        "in": "query",
+        "name": "right_bottom_map_longitude",
+        "required": false,
+        "schema": {
+            "type": "float",
+            "example": -114.01173700
+        },
+        "description": "Parameter right-bottom-map-longitude, parameters for clustering the map"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Data list of facilities",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Get facility description"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 200
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "current_page": {
+                      "type": "int",
+                      "example": 1
+                    },
+                    "first_page_url": {
+                      "type": "string",
+                      "example": "http://example.com/api/facility?page=1"
+                    },
+                    "from": {
+                      "type": "int",
+                      "example": 1
+                    },
+                    "last_page": {
+                      "type": "int",
+                      "example": 6
+                    },
+                    "last_page_url": {
+                      "type": "string",
+                      "example": "http://example.com/api/facility?page=6"
+                    },
+                    "next_page_url": {
+                      "type": "string",
+                      "example": "http://example.com/api/facility?page=6,"
+                    },
+                    "path": {
+                      "type": "string",
+                      "example": "http://example.com/api/facility"
+                    },
+                    "per_page": {
+                      "type": "int",
+                      "example": 3
+                    },
+                    "prev_page_url": {
+                      "type": "int",
+                      "example": null
+                    },
+                    "to": {
+                      "type": "int",
+                      "example": 3
+                    },
+                    "total": {
+                      "type": "int",
+                      "example": 3
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "int",
+                        "example": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Royal Canadian Lodge"
+                      },
+                      "slug": {
+                        "type": "string",
+                        "example": "royal-canadian-lodge"
+                      },
+                      "address": {
+                        "type": "string",
+                        "example": "459 Banff Ave"
+                      },
+                      "city": {
+                        "type": "string",
+                        "example": "Banff"
+                      },
+                      "latitude": {
+                        "type": "float",
+                        "example": 51.182786
+                      },
+                      "longitude": {
+                        "type": "float",
+                        "example": -115.561996
+                      },
+                      "website": {
+                        "type": "string,",
+                        "example": "https://www.hotels.com"
+                      },
+                      "family_friendly": {
+                        "type": "float",
+                        "example": 2
+                      },
+                      "relaxation": {
+                        "type": "float",
+                        "example": 2
+                      },
+                      "accessibility": {
+                        "type": "float",
+                        "example": 2
+                      },
+                      "images": {
+                        "type": "array",
+                        "example": [
+                          "http://example.com/storage/2/35.jpg",
+                          "http://example.com/storage/3/35.jpg",
+                          "http://example.com/storage/4/landscape-2331416__340.jpg",
+                          "http://example.com/storage/5/35.jpg",
+                          "http://example.com/storage/6/landscape-2331416__340.jpg",
+                          "http://example.com/storage/7/landscape-2331416__340.jpg"
+                        ]
+                      },
+                      "pools_count": {
+                        "type": "string",
+                        "example": "3"
+                      }
+                    }
+                  }
+                },
+                "map_bounds": {
+                  "type": "array",
+                  "example": [
+                      {
+                          "left_top_map_latitude": 56.2010449,
+                          "left_top_map_longitude": -125.3495738,
+                          "right_bottom_map_latitude": 55.967573200000004,
+                          "right_bottom_map_longitude": -125.4754303
+                        }
+                      ]
+                },
+                "map_clasterization": {
+                  "type": "array",
+                  "example": [
+                      {
+                          "left_top_map_latitude": 51.091859,
+                          "left_top_map_longitude": -121.337454,
+                          "right_bottom_map_latitude": 51.739772,
+                          "right_bottom_map_longitude": -114.011737,
+                          "facility_count": 2,
+                          "id": 2752,
+                          "latitude ": 51.081568,
+                          "longitude": -113.999286
+                      },
+                      {
+                          "leftTopMapLatitude": 40.021249,
+                          "leftTopMapLongitude": -99.47715000,
+                          "rightBottomMapLatitude": 39.739772,
+                          "rightBottomMapLongitude": -110.739772,
+                          "facility_count": 6,
+                          "id": 2800,
+                          "latitude ": 33.84890771,
+                          "longitude": -87.17091302
+                      }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Requested object not found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Requested object not found"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 404
+                }
+              }
+            }
+          }
+        }
+      },
+      "409": {
+        "description": "Request could not be processed because of conflict.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Request could not be processed because of conflict"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 409
+                }
+              }
+            }
+          }
+        }
+      },
+      "429": {
+        "description": "Rate limit exceed.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Rate limit exceed"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 429
+                }
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "The server encountered an internal error or misconfiguration and was unable to complete your request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "The server encountered an internal error or misconfiguration and was unable to complete your request"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 500
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

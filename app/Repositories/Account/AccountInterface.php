@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Bussiness;
+namespace App\Repositories\Account;
 
-interface BussinessInterface
+interface AccountInterface
 {
     public function getAll(): array;
 

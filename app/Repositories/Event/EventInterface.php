@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Bussiness;
+namespace App\Repositories\Event;
 
-interface BussinessInterface
+interface EventInterface
 {
     public function getAll(): array;
 

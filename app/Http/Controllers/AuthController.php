@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Auth\AuthInterface;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private $authRepository;
+
+    public function __construct(AuthInterface $authRepository)
+    {
+        $this->authRepository = $authRepository;
+    }
     public function index()
     {
         //

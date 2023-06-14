@@ -1,23 +1,21 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers;
 
-use App\Repositories\Review\ReviewInterface;
+use App\Repositories\Account\AccountInterface;
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class AccountController extends Controller
 {
-    private $reviewRepository;
+    private $accountRepository;
 
-    public function __construct(ReviewInterface $reviewRepository)
+    public function __construct(AccountInterface $accountRepository)
     {
-        $this->reviewRepository = $reviewRepository;
+        $this->accountRepository = $accountRepository;
     }
     public function index()
     {
-        //
+
     }
 
     /**

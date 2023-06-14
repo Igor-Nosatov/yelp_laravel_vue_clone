@@ -1,0 +1,143 @@
+{
+    "get": {
+      "summary": "Get city helpers",
+      "parameters": [
+        {
+          "in": "query",
+          "name": "search",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "Calgary"
+          },
+          "description": "Search result - get array of objects, city helpers by facility search field"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Get city helpers",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string,",
+                    "example": "Get city helpers"
+                  },
+                  "status": {
+                    "type": "int,",
+                    "example": 200
+                  },
+                  "data": {
+                    "type": "array",
+                    "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Calgary"
+                      },
+                      "state_id": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "country_id": {
+                        "type": "integer",
+                        "example": 1
+                      }
+                    }
+                   }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Requested object not found.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string,",
+                    "example": "Requested object not found"
+                  },
+                  "status": {
+                    "type": "int,",
+                    "example": 404
+                  }
+                }
+              }
+            }
+          }
+        },
+        "409": {
+          "description": "Request could not be processed because of conflict.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string,",
+                    "example": "Request could not be processed because of conflict"
+                  },
+                  "status": {
+                    "type": "int,",
+                    "example": 409
+                  }
+                }
+              }
+            }
+          }
+        },
+        "429": {
+          "description": "Rate limit exceed.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string,",
+                    "example": "Rate limit exceed"
+                  },
+                  "status": {
+                    "type": "int,",
+                    "example": 429
+                  }
+                }
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "The server encountered an internal error or misconfiguration and was unable to complete your request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string,",
+                    "example": "The server encountered an internal error or misconfiguration and was unable to complete your request"
+                  },
+                  "status": {
+                    "type": "int,",
+                    "example": 500
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

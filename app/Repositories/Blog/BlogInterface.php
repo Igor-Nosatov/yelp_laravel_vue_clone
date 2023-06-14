@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories;
+namespace App\Repositories\Blog;
 
 interface BlogInterface
 {
@@ -14,5 +14,5 @@ interface BlogInterface
 
     public function update(int $id, array $data): bool;
 
-    public function delete(int $id): bool;
+    public function delete(int $id): void;
 }

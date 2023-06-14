@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Bussiness\BussinessInterface;
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private $businessRepository;
+
+    public function __construct(BussinessInterface $businessRepository)
+    {
+        $this->businessRepository = $businessRepository;
+    }
     public function index()
     {
         //

@@ -18,5 +18,6 @@ class RepositoryServiceProvide extends ServiceProvider
         $this->app->bind('App\Repositories\Catalog\CatalogInterface', 'App\Repositories\Catalog\CatalogRepository');
         $this->app->bind('App\Repositories\Home\HomeInterface', 'App\Repositories\Home\HomeRepository');
         $this->app->bind('App\Repositories\Review\ReviewInterface', 'App\Repositories\Review\ReviewRepository');
+        $this->app->bind('App\Repositories\Blog\BlogInterface', 'App\Repositories\Blog\BlogRepository');
     }
 }

@@ -2,23 +2,25 @@
 
 declare(strict_types=1);
 
-namespace App\Repositories\Auth;
+namespace App\Repositories\Event;
 
-class AuthRepository implements AuthInterface
+use App\Models\Event;
+
+class EventRepository implements EventInterface
 {
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
+        return Event::latest()->paginate(12);
     }
 
     public function getById(int $id): ?array
     {
-        // TODO: Implement getById() method.
+        return Event::find($id);
     }
 
     public function create(array $data): ?array
     {
-        // TODO: Implement create() method.
+        return Event::create($data);
     }
 
     public function update(int $id, array $data): bool
@@ -28,6 +30,7 @@ class AuthRepository implements AuthInterface
 
     public function delete(int $id): bool
     {
-        // TODO: Implement delete() method.
+        $event = Event::find($id);
+        $event->delete();
     }
 }
