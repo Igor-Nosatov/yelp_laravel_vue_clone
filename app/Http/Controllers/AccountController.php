@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Repositories\Account\AccountInterface;
 use Illuminate\Http\Request;
 
-class AccountController extends Controller
+class AccountController extends BaseController
 {
     private $accountRepository;
 

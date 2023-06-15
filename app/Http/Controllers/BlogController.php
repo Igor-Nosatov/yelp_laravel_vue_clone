@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Repositories\Blog\BlogInterface;
-use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class BlogController extends BaseController
 {
     private $blogRepository;
 
@@ -15,41 +14,18 @@ class BlogController extends Controller
     {
         $this->blogRepository = $blogRepository;
     }
-    public function index()
+    public function index():mixed
     {
-        //
+        $response = $this->blogRepository->getAll();
+        return $this->successPaginationResponse(
+            $response,
+            'get blog post'
+        );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show(int $id):mixed
     {
-
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $response =  $this->blogRepository->getById($id);
+        return $this->successResponse($response, 'get post by id');
     }
 }

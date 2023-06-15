@@ -7,6 +7,7 @@ use App\Models\Amenity;
 use App\Models\Category;
 use App\Models\Business;
 use App\Models\Feature;
+use App\Models\Suggest;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -51,6 +52,17 @@ class BusinessSeeder extends Seeder
                         'updated_at' => fake()->dateTimeBetween('-1 year', 'now'),
                     ];
                     DB::table('amenity_business')->insert($amenity_business);
+                }
+
+                $suggestId = Suggest::pluck('id');
+                foreach($suggestId as $suggest){
+                    $business_suggest = [
+                        'amenity_id' => $suggest,
+                        'business_id' => $id,
+                        'created_at' => fake()->dateTimeBetween('-1 year', 'now'),
+                        'updated_at' => fake()->dateTimeBetween('-1 year', 'now'),
+                    ];
+                    DB::table('business_suggest')->insert($business_suggest);
                 }
         }
     }

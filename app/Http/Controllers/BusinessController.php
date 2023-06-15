@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Bussiness\BussinessInterface;
 use Illuminate\Http\Request;
 
-class BusinessController extends Controller
+class BusinessController extends BaseController
 {
     private $businessRepository;
 

@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Repositories\Catalog\CatalogInterface;
-use Illuminate\Http\Request;
 
-class CatalogController extends Controller
+class CatalogController extends BaseController
 {
     private $catalogRepository;
 
@@ -15,17 +14,18 @@ class CatalogController extends Controller
     {
         $this->catalogRepository = $catalogRepository;
     }
-    public function index()
+    public function index():mixed
     {
-        //
+        $response = $this->catalogRepository->getAll();
+        return $this->successPaginationResponse(
+            $response,
+            'get business catalog'
+        );
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(int $id):mixed
     {
-        //
+        $response =  $this->catalogRepository->getById($id);
+        return $this->successResponse($response, 'get business item by id from catalog');
     }
-
 }

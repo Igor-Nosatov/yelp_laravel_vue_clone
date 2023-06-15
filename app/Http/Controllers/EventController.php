@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Event\EventInterface;
 use Illuminate\Http\Request;
 
-class EventController extends Controller
+class EventController extends BaseController
 {
     private $eventRepository;
 

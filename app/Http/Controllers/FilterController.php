@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Filter\FilterInterface;
 
-class FilterController extends Controller
+class FilterController extends BaseController
 {
     private $filterRepository;
 
@@ -14,6 +14,7 @@ class FilterController extends Controller
     }
     public function index()
     {
-        //
+        $response =  $this->filterRepository->getAll();
+        return $this->successResponse($response, 'get filter listing');
     }
 }

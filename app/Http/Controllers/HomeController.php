@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Home\HomeInterface;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     private $homeRepository;
 

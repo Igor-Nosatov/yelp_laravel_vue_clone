@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Auth\AuthInterface;
 use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class AuthController  extends BaseController
 {
     private $authRepository;
 

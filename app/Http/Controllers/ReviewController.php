@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Repositories\Review\ReviewInterface;
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class ReviewController extends BaseController
 {
     private $reviewRepository;
 

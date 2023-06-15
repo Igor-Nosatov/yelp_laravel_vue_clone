@@ -6,7 +6,7 @@ namespace App\Repositories\Catalog;
 
 interface CatalogInterface
 {
-    public function getAll(): array;
+    public function getAll():mixed;
 
     public function getById(int $id): ?array;
 
