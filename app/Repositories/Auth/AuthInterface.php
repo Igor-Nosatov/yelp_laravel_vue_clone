@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace App\Repositories\Auth;
 
+use App\Http\Requests\Auth\UserRegisterRequest;
+use App\Http\Requests\Auth\UserUpdateRequest;
+use App\Models\User;
+
 interface AuthInterface
 {
-    public function getAll(): array;
+    public function signUp(UserRegisterRequest $request): array;
 
-    public function getById(int $id): ?array;
-
-    public function create(array $data): ?array;
-
-    public function update(int $id, array $data): bool;
-
-    public function delete(int $id): bool;
+    public function  login(string $email, string  $password): array|null;
+    public function updateUser($id, UserUpdateRequest $request): User;
 }

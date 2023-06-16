@@ -1,36 +1,27 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace App\Repositories\Review;
 
+use App\Http\Requests\Review\ReviewStoreRequest;
+use App\Http\Requests\Review\ReviewUpdateRequest;
 use App\Models\Review;
 
 class ReviewRepository implements ReviewInterface
 {
-    public function getAll(): array
+    public function create(ReviewStoreRequest $request):  ? array
     {
-        // TODO: Implement getAll() method.
+        return Review::create($request->validated());
     }
 
-    public function getById(int $id): ?array
+    public function update(ReviewUpdateRequest $request, Review $review) : bool
     {
-        // TODO: Implement getById() method.
+        return $review->update($request->validated());
     }
 
-    public function create(array $data): ?array
+    public function delete(Review $review): void
     {
-        return Review::create($data);
-    }
-
-    public function update(int $id, array $data): bool
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(int $id): bool
-    {
-        $review = Review::find($id);
         $review->delete();
     }
 }
