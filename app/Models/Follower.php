@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -22,6 +23,11 @@ class Follower extends Model
 {
     use HasFactory;
     protected $fillable = ['follower_id', 'following_id'];
+
+    protected $casts = [
+        'follower_id' => 'integer',
+        'following_id'=> 'integer',
+    ];
 
     public function follower():BelongsTo
     {

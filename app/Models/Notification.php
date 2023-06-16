@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
@@ -25,6 +26,12 @@ class Notification extends Model
         'user_id',
         'business_id',
         'content',
+    ];
+
+    protected $casts = [
+        'user_id'=> 'integer',
+        'business_id'=>  'integer',
+        'content'=> 'string',
     ];
 
     public function user():BelongsTo

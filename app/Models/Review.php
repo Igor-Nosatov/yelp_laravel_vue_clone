@@ -1,10 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 /**
  * App\Models\Review
@@ -26,6 +28,12 @@ class Review extends Model
        'content',
        'user_id',
        'business_id',
+    ];
+    protected $casts = [
+        'rating' => 'integer',
+        'content'=> 'string',
+        'user_id'=> 'integer',
+        'business_id'=> 'integer',
     ];
 
     public function user():BelongsTo

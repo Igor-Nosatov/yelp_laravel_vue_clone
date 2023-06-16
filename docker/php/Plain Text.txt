@@ -1,0 +1,52 @@
+# Use the official PHP 7.3 base image with Apache
+FROM php:7.3-apache
+
+# Set the working directory inside the container
+WORKDIR /var/www/html
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    unzip \
+    git \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql zip
+
+# Install GD extension
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install gd
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
+# Copy the application code into the container
+COPY . .
+
+# Get latest Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Install Node
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
+
+RUN npm install pm2 -g
+
+RUN npm install -g yarn
+
+# # Set the ownership and permissions
+# RUN chown -R www-data:www-data /var/www/html \
+#     && chmod -R 755 /var/www/html/storage
+
+# Expose port 80
+EXPOSE 80
+
+# Start the Apache server
+CMD ["apache2-foreground"]
+

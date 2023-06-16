@@ -1,8 +1,10 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Business;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class ReviewSeeder extends Seeder
@@ -12,6 +14,14 @@ class ReviewSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $businessId = Business::pluck('id');
+
+        foreach ($businessId as $id){
+            for ($i = 1; $i <= 15; $i++) {
+                Review::factory()->create([
+                    'business_id' => $id,
+                ]);
+            }
+        }
     }
 }

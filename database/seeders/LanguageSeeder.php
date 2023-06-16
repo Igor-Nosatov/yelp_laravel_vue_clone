@@ -1,4 +1,5 @@
 <?php
+declare (strict_types = 1);
 
 namespace Database\Seeders;
 
@@ -40,6 +41,5 @@ class LanguageSeeder extends Seeder
         ];
 
         DB::table('languages')->insert($languages);
-
     }
 }

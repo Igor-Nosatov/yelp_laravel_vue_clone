@@ -1,0 +1,269 @@
+{
+  "get": {
+    "summary": "Return facility description with additional information.",
+    "parameters": [
+      {
+        "in": "path",
+        "name": "slug",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "royal-canadian-lodge"
+        },
+        "description": "Facility slug"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "A JSON array of facilities",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Get facility description"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 200
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "id",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Royal Canadian Lodge"
+                    },
+                    "slug": {
+                      "type": "string",
+                      "example": "royal-canadian-lodge"
+                    },
+                    "address": {
+                      "type": "string",
+                      "example": "459 Banff Ave"
+                    },
+                    "latitude": {
+                      "type": "string",
+                      "example": "51.20008400"
+                    },
+                    "longitude": {
+                      "type": "string",
+                      "example": "-115.53627200"
+                    },
+                    "family_friendly": {
+                      "type": "float",
+                      "example": 2
+                    },
+                    "relaxation": {
+                      "type": "float",
+                      "example": 2
+                    },
+                    "accessibility": {
+                      "type": "float",
+                      "example": 2
+                    },
+                    "accebility_tags": {
+                      "type": "array",
+                      "example": [
+                        "barrier free access to pool",
+                        "automatic Doors",
+                        "assitive Hearing",
+                        "water Wheelchairs",
+                        "individual Shower Stalls",
+                        "lifejackets Available"
+                      ]
+                    },
+                    "features_tags": {
+                      "type": "array",
+                      "example": [
+                        "barrier free access to pool",
+                        "automatic Doors",
+                        "assitive Hearing",
+                        "water Wheelchairs",
+                        "individual Shower Stalls",
+                        "lifejackets Available"
+                      ]
+                    },
+                    "pool_activity_tags": {
+                      "type": "array",
+                      "example": [
+                        "barrier free access to pool",
+                        "automatic Doors",
+                        "assitive Hearing",
+                        "water Wheelchairs",
+                        "individual Shower Stalls",
+                        "lifejackets Available"
+                      ]
+                    },
+                    "food_and_drink_tags": {
+                      "type": "array",
+                      "example": [
+                        "barrier free access to pool",
+                        "automatic Doors",
+                        "assitive Hearing",
+                        "water Wheelchairs",
+                        "individual Shower Stalls",
+                        "lifejackets Available"
+                      ]
+                    },
+                    "pools_count": {
+                      "type": "integer",
+                      "example": "3"
+                    },
+                    "pools": {
+                      "type": "array",
+                      "example": [
+                        {
+                          "id": 1,
+                          "name": "Pool",
+                          "targeted_temperature": 28,
+                          "min_depth": 24,
+                          "hotel": 1,
+                           "pool_type": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                           "pool_entry": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                          "image":"http://example.com/storage/2/35.jpg"
+                        },
+                        {
+                          "id": 2,
+                          "name": "Pool",
+                          "targeted_temperature": 28,
+                          "min_depth": 24,
+                          "hotel": 1,
+                          "pool_type": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                           "pool_indoor": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                           "pool_entry": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                          "image":"http://example.com/storage/2/35.jpg"
+                        },
+                        {
+                          "id": 3,
+                          "name": "Pool",
+                          "targeted_temperature": 28,
+                          "min_depth": 24,
+                          "hotel": 1,
+                          "pool_type": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                           "pool_indoor": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                           "pool_entry": {
+                            "id": 2,
+                            "name": "Pool"
+                           },
+                          "image":"http://example.com/storage/2/35.jpg"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Requested object not found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Requested object not found"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 404
+                }
+              }
+            }
+          }
+        }
+      },
+      "409": {
+        "description": "Request could not be processed because of conflict.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Request could not be processed because of conflict"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 409
+                }
+              }
+            }
+          }
+        }
+      },
+      "429": {
+        "description": "Rate limit exceed.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "Rate limit exceed"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 429
+                }
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "The server encountered an internal error or misconfiguration and was unable to complete your request.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string,",
+                  "example": "The server encountered an internal error or misconfiguration and was unable to complete your request"
+                },
+                "status": {
+                  "type": "int,",
+                  "example": 500
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
