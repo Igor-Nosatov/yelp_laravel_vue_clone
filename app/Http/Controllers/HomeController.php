@@ -16,7 +16,11 @@ class HomeController extends BaseController
     }
     public function index()
     {
-        //
+        $response = $this->homeRepository->getAll();
+        return $this->successResponse(
+            $response,
+            'get data for start page'
+        );
     }
 
 }

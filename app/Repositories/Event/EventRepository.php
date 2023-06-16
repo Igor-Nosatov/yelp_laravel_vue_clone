@@ -4,33 +4,24 @@ declare(strict_types=1);
 
 namespace App\Repositories\Event;
 
+use App\Http\Requests\Event\EventStoreRequest;
+use App\Http\Requests\Event\EventUpdateRequest;
 use App\Models\Event;
 
 class EventRepository implements EventInterface
 {
-    public function getAll(): array
+    public function create(EventStoreRequest $request):  ? array
     {
-        return Event::latest()->paginate(12);
+        return Event::create($request->validated());
     }
 
-    public function getById(int $id): ?array
+    public function update(EventUpdateRequest $request, Event $event) : bool
     {
-        return Event::find($id);
+        return $event->update($request->validated());
     }
 
-    public function create(array $data): ?array
+    public function delete(Event $event): void
     {
-        return Event::create($data);
-    }
-
-    public function update(int $id, array $data): bool
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(int $id): bool
-    {
-        $event = Event::find($id);
         $event->delete();
     }
 }

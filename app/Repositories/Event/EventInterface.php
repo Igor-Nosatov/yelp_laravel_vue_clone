@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Repositories\Event;
 
+use App\Http\Requests\Event\EventStoreRequest;
+use App\Http\Requests\Event\EventUpdateRequest;
+use App\Models\Event;
+
 interface EventInterface
 {
-    public function getAll(): array;
+    public function create(EventStoreRequest $request):  ? array;
 
-    public function getById(int $id): ?array;
+    public function update(EventUpdateRequest $request, Event $event) : bool;
 
-    public function create(array $data): ?array;
-
-    public function update(int $id, array $data): bool;
-
-    public function delete(int $id): bool;
+    public function delete(Event $event): void;
 }

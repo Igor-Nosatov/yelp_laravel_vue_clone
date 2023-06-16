@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'id' => Str::uuid()->toString(),
-                'name' => 'Sam Winchester',
+                'first_name' => 'Sam',
+                'last_name' => 'Winchester',
                 'email' => 'sam_winchester@example.com',
                 'password' => Hash::make('password1'),
                 'email_verified_at' => now(),
@@ -28,7 +29,8 @@ class UserSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid()->toString(),
-                'name' => 'Din Winchester',
+                'first_name' => 'Din',
+                'last_name' => 'Winchester',
                 'email' => 'din_winchester@example.com',
                 'password' => Hash::make('password2'),
                 'email_verified_at' => now(),
@@ -37,7 +39,8 @@ class UserSeeder extends Seeder
             ],
             [
                 'id' => Str::uuid()->toString(),
-                'name' => 'Mary Winchester',
+                'first_name' => 'Mary',
+                'last_name' => 'Winchester',
                 'email' => 'mary_winchester@example.com',
                 'password' => Hash::make('password3'),
                 'email_verified_at' => now(),

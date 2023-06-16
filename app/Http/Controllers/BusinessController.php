@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Bussiness\BussinessInterface;
+use App\Repositories\Business\BusinessInterface;
 use Illuminate\Http\Request;
 
 class BusinessController extends BaseController
 {
     private $businessRepository;
 
-    public function __construct(BussinessInterface $businessRepository)
+    public function __construct(BusinessInterface $businessRepository)
     {
         $this->businessRepository = $businessRepository;
     }

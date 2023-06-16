@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Repositories\Review;
 
+use App\Http\Requests\Review\ReviewStoreRequest;
+use App\Http\Requests\Review\ReviewUpdateRequest;
+use App\Models\Review;
+
 interface ReviewInterface
 {
-    public function getAll(): array;
+    public function create(ReviewStoreRequest $request): ?array;
 
-    public function getById(int $id): ?array;
+    public function update(ReviewUpdateRequest $request, Review $review): bool;
 
-    public function create(array $data): ?array;
-
-    public function update(int $id, array $data): bool;
-
-    public function delete(int $id): bool;
+    public function delete(Review $review): void;
 }

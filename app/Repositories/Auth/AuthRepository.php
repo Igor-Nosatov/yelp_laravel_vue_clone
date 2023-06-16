@@ -4,30 +4,51 @@ declare(strict_types=1);
 
 namespace App\Repositories\Auth;
 
+use App\Http\Requests\Auth\UserRegisterRequest;
+use App\Http\Requests\Auth\UserUpdateRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class AuthRepository implements AuthInterface
 {
-    public function getAll(): array
+    public function signUp(UserRegisterRequest $request): array
     {
-        // TODO: Implement getAll() method.
+        $user = User::create( [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'birthday' => \Carbon\Carbon::parse($request->birthday),
+            'phone_number' => $request->phone_number,
+        ]);
+
+        $token = $user->createToken('apiToken')->plainTextToken;
+
+        return ['user' => $user, 'token' => $token];
     }
 
-    public function getById(int $id): ?array
+    public function login(string $email, string  $password): array|null
     {
-        // TODO: Implement getById() method.
+        $user = User::where('email', $email)->firstOrFail();
+        if (!$user || !Hash::check($password, $user->password)) {
+            return null;
+        }
+        $token = $user->createToken('apiToken')->plainTextToken;
+
+        return ([
+            'user' => $user,
+            'token' => $token,
+        ]);
     }
 
-    public function create(array $data): ?array
+    public function updateUser($id, UserUpdateRequest $request): User
     {
-        // TODO: Implement create() method.
+        $user = User::where('id', $id)->first();
+        $user->birthday = $request->birthday;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return $user;
     }
 
-    public function update(int $id, array $data): bool
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(int $id): bool
-    {
-        // TODO: Implement delete() method.
-    }
 }
