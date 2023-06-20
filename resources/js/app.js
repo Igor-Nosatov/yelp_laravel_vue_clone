@@ -6,6 +6,7 @@ import { createPinia } from 'pinia'
 
 import App from './layouts/App.vue'
 import router from './routing/router'
+import AxiosPlugin from './plugins/axios';
 
 // Vuetify
 import 'vuetify/styles'
@@ -26,4 +27,5 @@ const vue = createApp(App);
 vue.use(createPinia());
 vue.use(router());
 vue.use(vuetify);
+vue.use(AxiosPlugin);
 vue.mount('#app');
