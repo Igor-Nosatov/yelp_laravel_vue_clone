@@ -131,6 +131,11 @@ class Business extends Model
         return $this->hasMany(Event::class);
     }
 
+    public function reviews():HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function amenities(): BelongsToMany
     {
         return $this->belongsToMany(Amenity::class);

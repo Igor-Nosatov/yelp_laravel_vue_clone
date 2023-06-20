@@ -10,10 +10,10 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
-    Route::resource('', HomeController::class)->only(['index']);
-    Route::resource('catalog', CatalogController::class)->only(['index', 'show']);
-    Route::resource('news', BlogController::class);
-    Route::resource('filters', FilterController::class)->only(['index']);
+    Route::resource('/home', HomeController::class)->only(['index']);
+    Route::resource('/catalog', CatalogController::class)->only(['index', 'show']);
+    Route::resource('/news', BlogController::class);
+    Route::resource('/filters', FilterController::class)->only(['index']);
     Route::put('/user', [AuthController::class, 'update']);
 });
 
