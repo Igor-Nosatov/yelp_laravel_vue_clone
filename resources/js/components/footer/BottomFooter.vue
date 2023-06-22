@@ -8,7 +8,7 @@
 
   <style scoped>
   .background-grey {
-    background-color: #efeff1;
+    background-color: #66666e;
   }
 
   @media (max-width: 600px) {

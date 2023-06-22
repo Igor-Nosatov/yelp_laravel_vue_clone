@@ -14,7 +14,7 @@ use Illuminate\Pipeline\Pipeline;
  * App\Models\Business
  *
  * @property int $id
- * @property int $name
+ * @property string $name
  * @property string $price_level
  * @property string $address
  * @property string $city
@@ -94,7 +94,7 @@ class Business extends Model
 
     protected $casts = [
         'id' => 'integer',
-        'name' => 'integer',
+        'name' => 'string',
         'price_level' => 'string',
         'address'=> 'string',
         'city'=> 'string',

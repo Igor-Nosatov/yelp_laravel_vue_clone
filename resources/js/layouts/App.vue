@@ -8,8 +8,8 @@
         <router-view />
     </v-col>
   </v-row>
-  <TopFooter class="background-grey"/>
-  <BottomFooter  class="background-grey"/>
+  <TopFooter class="top-footer-background"/>
+  <BottomFooter  class="bottom-footer-background"/>
 </template>
 
 <script>
@@ -47,7 +47,11 @@ export default {
   min-height: 400px;
 }
 
-.background-grey{
+.top-footer-background{
     background-color: #efeff1;
+}
+
+.bottom-footer-background{
+    background-color: #d8d8db;
 }
 </style>

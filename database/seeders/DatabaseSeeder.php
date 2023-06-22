@@ -19,11 +19,12 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(AccountSeeder::class);
+        $this->call(SuggestSeeder::class);
         $this->call(BusinessSeeder::class);
         $this->call(PhotoSeeder::class);
         $this->call(ReviewSeeder::class);
         $this->call(TopicSeeder::class);
         $this->call(BlogSeeder::class);
-        $this->call(SuggestSeeder::class);
+
     }
 }

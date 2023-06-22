@@ -11,6 +11,7 @@ class HomeRepository implements HomeInterface
     public function getAll(): array
     {
         $data = Business::withCount(['photos', 'reviews'])
+            ->with(['photos', 'reviews'])
             ->limit(6)
             ->get(['id', 'address']);
 

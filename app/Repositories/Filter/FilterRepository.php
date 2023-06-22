@@ -22,7 +22,7 @@ class FilterRepository implements FilterInterface
             'category'=> Category::get()->toArray(),
             'features'=> Feature::get()->toArray(),
             'suggest'=> Suggest::get()->toArray(),
-            'price'=> ['low', 'average','high', 'luxury'],
+            'distance'=> ['low', 'average','high', 'luxury'],
         ];
 
         Cache::put('options_data', $options, $seconds = 2592000);//30 days

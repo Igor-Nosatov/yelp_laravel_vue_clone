@@ -10,7 +10,11 @@ class CatalogRepository implements CatalogInterface
 {
     public function getAll():mixed
     {
-        return Business::filtered()->paginate(12);
+        return Business::filtered()
+        ->with(['photos', 'reviews','amenities','categories','features','suggests'])
+        ->withCount(['photos', 'reviews'])
+        ->paginate(12);
+
     }
 
     public function getById(int $id): ?array
