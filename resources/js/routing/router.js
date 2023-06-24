@@ -5,8 +5,8 @@ import {
 import Home from "../views/Home.vue";
 import SignUp from "../views/SignUp.vue";
 import Login from "../views/Login.vue";
-import Catalog from "../views/BusinessCatalog.vue";
-import CatalogItem from "../views/BusinessCatalogItem.vue";
+import Catalog from "../views/Catalog.vue";
+import CatalogItem from "../views/CatalogItem.vue";
 import Review from "../views/Review.vue";
 import Profile from "../views/Account/Profile.vue";
 import Password from "../views/Account/Password.vue";

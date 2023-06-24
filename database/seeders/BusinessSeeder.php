@@ -18,7 +18,7 @@ class BusinessSeeder extends Seeder
      */
     public function run(): void
     {
-        Business::factory()->count(1000)->create();
+        Business::factory()->count(20)->create();
 
         $businessId = Business::pluck('id');
 
@@ -31,7 +31,7 @@ class BusinessSeeder extends Seeder
                 ];
                 DB::table('business_category')->insert($business_category);
 
-                $featureId = Feature::inRandomOrder()->limit(10)->pluck('id');
+                $featureId = Feature::inRandomOrder()->limit(3)->pluck('id');
                 foreach($featureId as $feature){
                     $business_feature = [
                         'business_id' => $id,
@@ -43,7 +43,7 @@ class BusinessSeeder extends Seeder
                     DB::table('business_feature')->insert($business_feature);
                 }
 
-                $amenityId = Amenity::inRandomOrder()->limit(20)->pluck('id');
+                $amenityId = Amenity::inRandomOrder()->limit(5)->pluck('id');
                 foreach($amenityId as $amenity){
                     $amenity_business = [
                         'amenity_id' => $amenity,
@@ -54,11 +54,11 @@ class BusinessSeeder extends Seeder
                     DB::table('amenity_business')->insert($amenity_business);
                 }
 
-                $suggestId = Suggest::pluck('id');
+                $suggestId = Suggest::inRandomOrder()->limit(3)->pluck('id');
                 foreach($suggestId as $suggest){
                     $business_suggest = [
-                        'amenity_id' => $suggest,
                         'business_id' => $id,
+                        'suggest_id' => $suggest,
                         'created_at' => fake()->dateTimeBetween('-1 year', 'now'),
                         'updated_at' => fake()->dateTimeBetween('-1 year', 'now'),
                     ];

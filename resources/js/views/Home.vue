@@ -1,5 +1,5 @@
 <template>
-    <v-row class="recent_activity pt-8">
+    <v-row class="recent-activity pt-8">
       <v-col cols="12">
         <h1 class="text-center pb-6">Recent Activity</h1>
       </v-col>
@@ -21,24 +21,19 @@
         <v-row justify="center">
           <v-col cols="8">
             <v-row class="category-row" justify="center">
-                <v-col cols="12" sm="6" md="4" lg="3" v-for="category in categories" :key="category.title">
-                  <v-card class="category-item rounded-0" height="250">
-                    <v-card-item class="mx-auto mt-15">
-                      <v-card-subtitle class="d-flex flex-row justify-center">
-                        <v-icon
-                          class="icon-style"
-                          :color="category.color"
-                          :icon="category.icon"
-                          size="60px"
-                        ></v-icon>
-                      </v-card-subtitle>
-                      <v-card-title class="text-center">
-                        {{ category.title }}
-                      </v-card-title>
-                    </v-card-item>
-                  </v-card>
-                </v-col>
-              </v-row>
+              <v-col cols="12" sm="6" md="4" lg="3" v-for="category in categories" :key="category.title">
+                <v-card class="category-item rounded-0" height="250">
+                  <v-card-item class="mx-auto mt-15">
+                    <v-card-subtitle class="d-flex flex-row justify-center">
+                      <v-icon class="icon-style" :color="category.color" :size="60">{{ category.icon }}</v-icon>
+                    </v-card-subtitle>
+                    <v-card-title class="text-center">
+                      {{ category.title }}
+                    </v-card-title>
+                  </v-card-item>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-col>
@@ -48,7 +43,7 @@
   <script>
   import { ref, onMounted } from "vue";
   import { storeToRefs } from "pinia";
-  import BusinessCard from "@/components/card/BusinessCard.vue";
+  import BusinessCard from "@/components/home_page_components/BusinessCard.vue";
   import { useHomeStore } from "../store/home/useHomeStore";
   import { ICON_CATEGORY_LIST } from "../helpers/constants/category_list";
 
@@ -57,19 +52,19 @@
       BusinessCard,
     },
     setup() {
-    const store = useHomeStore();
-    const { businessCatalogData } = storeToRefs(store);
-    const { fetchAllBusinessCatalogData } = useHomeStore();
+      const { businessCatalogData } = storeToRefs(useHomeStore());
+      const { fetchAllBusinessCatalogData } = useHomeStore();
 
-    const categories = ref(ICON_CATEGORY_LIST);
+      const categories = ref(ICON_CATEGORY_LIST);
 
       onMounted(async () => {
         try {
-        fetchAllBusinessCatalogData();
+          fetchAllBusinessCatalogData();
         } catch (error) {
           console.error(error);
         }
       });
+
       return {
         categories,
         businessCatalogData,
@@ -79,33 +74,7 @@
   </script>
 
   <style scoped>
-  .business-row {
-    padding-top: 48px;
-  }
-  .custom-card,
-  .category-item {
-    border: 1px solid #eceaea !important;
-  }
-
-  .category-item {
-    margin: 10px;
-  }
-
-  .category-item:hover {
-    border: 1px solid #dad6d6 !important;
-    cursor: pointer;
-  }
-
-  .word-wrap {
-    font-size: 14px !important;
-    word-wrap: break-word !important;
-  }
-
-  .card-title {
-    font-size: 16px !important;
-  }
-
-  .recent_activity {
+  .recent-activity {
     background-color: #f2f2f2;
     padding: 24px;
   }
@@ -126,17 +95,8 @@
     padding-top: 48px;
   }
 
-  .pt-8,
-  .pt-8 .pt-8 {
-    padding-top: 48px;
-  }
-
   .p-4 {
     padding: 16px;
-  }
-
-  .icon-style {
-    margin-top: 15px;
   }
 
   .categories {
@@ -145,14 +105,34 @@
   }
 
   .category-item {
+    border: 1px solid #eceaea;
+    margin: 10px;
     transition: border-color 0.3s;
   }
 
-  .text-center {
-    text-align: center;
+  .category-item:hover {
+    border-color: #dad6d6;
+    cursor: pointer;
+  }
+
+  .icon-style {
+    margin-top: 15px;
   }
 
   .mt-15 {
     margin-top: 15px;
+  }
+
+  .business-row {
+    padding-top: 48px;
+  }
+
+  .word-wrap {
+    font-size: 14px !important;
+    word-wrap: break-word !important;
+  }
+
+  .card-title {
+    font-size: 16px !important;
   }
   </style>
