@@ -52,8 +52,7 @@
       BusinessCard,
     },
     setup() {
-      const store = useHomeStore();
-      const { businessCatalogData } = storeToRefs(store);
+      const { businessCatalogData } = storeToRefs(useHomeStore());
       const { fetchAllBusinessCatalogData } = useHomeStore();
 
       const categories = ref(ICON_CATEGORY_LIST);

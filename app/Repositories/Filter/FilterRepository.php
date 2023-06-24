@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories\Filter;
 
+use App\Models\Amenity;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Suggest;
@@ -22,7 +23,8 @@ class FilterRepository implements FilterInterface
             'category'=> Category::get()->toArray(),
             'features'=> Feature::get()->toArray(),
             'suggest'=> Suggest::get()->toArray(),
-            'distance'=> ['low', 'average','high', 'luxury'],
+            'amenities'=> Amenity::get()->toArray(),
+            'price'=> ['Low', 'Average','High', 'Luxury'],
         ];
 
         Cache::put('options_data', $options, $seconds = 2592000);//30 days

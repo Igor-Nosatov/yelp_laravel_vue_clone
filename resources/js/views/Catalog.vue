@@ -3,70 +3,122 @@
     <v-col cols="10" align-self="center">
       <v-row>
         <v-col cols="2">
-          <h3 class="font-weight-bold">Filters</h3>
-          <div class="d-flex flex-row">
-            <v-checkbox
-              class="price-filter"
-              v-for="item in priceFilterValues"
-              :key="item.id"
-              >{{ item.price_level }}</v-checkbox
-            >
-          </div>
+          <h3 class="font-weight-bold pt-16">Filters</h3>
+          <br />
+          <v-expansion-panels v-model="price_panel">
+            <v-expansion-panel>
+              <v-expansion-panel-title
+                ><h4 class="font-weight-bold">
+                  Price Level
+                </h4></v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <div class="d-flex flex-column">
+                  <div class="pb-4">
+                    <v-checkbox
+                      :label="item"
+                      class="suggested-filter"
+                      v-for="item in catalogFiltersData.price"
+                      :key="item"
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
           <v-divider></v-divider>
-          <h4 class="font-weight-bold pt-4">Suggested</h4>
-          <div class="pb-4">
-            <v-checkbox
-              :label="item.name"
-              class="suggested-filter"
-              v-for="item in filters.suggest"
-              :key="item.id"
-            ></v-checkbox>
-          </div>
+          <br />
+          <v-expansion-panels v-model="suggest_panel">
+            <v-expansion-panel>
+              <v-expansion-panel-title
+                ><h4 class="font-weight-bold">
+                    Suggested
+                </h4></v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <div class="d-flex flex-column">
+                  <div class="pb-4">
+                    <v-checkbox
+                      :label="item.name"
+                      class="suggested-filter"
+                      v-for="item in catalogFiltersData.suggest"
+                      :key="item.id"
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
           <v-divider></v-divider>
-          <h4 class="font-weight-bold pt-4">Category</h4>
-          <div class="d-flex flex-row flex-wrap">
-            <span v-for="item in filters.category" :key="item.id">
-              <input type="checkbox" :id="item.id" />
-              <label :for="item.id">{{ item.name }}</label>
-            </span>
-          </div>
+          <br/>
+          <v-expansion-panels v-model="category_panel">
+            <v-expansion-panel>
+              <v-expansion-panel-title
+                ><h4 class="font-weight-bold">
+                    Category
+                </h4></v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <div class="d-flex flex-column">
+                  <div class="pb-4">
+                    <v-checkbox
+                      :label="item.name"
+                      class="suggested-filter"
+                      v-for="item in catalogFiltersData.category"
+                      :key="item.id"
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
           <v-divider></v-divider>
-          <h4 class="font-weight-bold pt-4">Features</h4>
-          <div class="pb-4">
-            <v-checkbox
-            :label="item.name"
-            class="suggested-filter"
-            v-for="item in filters.features"
-            :key="item.id"
-          ></v-checkbox>
-
-          </div>
+          <br/>
+          <v-expansion-panels v-model="feature_panel">
+            <v-expansion-panel>
+              <v-expansion-panel-title
+                ><h4 class="font-weight-bold">
+                    Features
+                </h4></v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <div class="d-flex flex-column">
+                  <div class="pb-4">
+                    <v-checkbox
+                      :label="item.name"
+                      class="suggested-filter"
+                      v-for="item in catalogFiltersData.features"
+                      :key="item.id"
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
           <v-divider></v-divider>
-          <h4 class="font-weight-bold pt-4">Neighborhoods</h4>
-          <div class="pb-4">
-            <v-checkbox
-              label="Alamo Square"
-              class="features-filter"
-            ></v-checkbox>
-            <v-checkbox label="Anza Vista" class="features-filter"></v-checkbox>
-            <v-checkbox
-              label="Ashbury Heights"
-              class="features-filter"
-            ></v-checkbox>
-            <v-checkbox
-              label="Balboa Terrace"
-              class="features-filter"
-            ></v-checkbox>
-          </div>
+          <br/>
+          <v-expansion-panels v-model="amenity_panel">
+            <v-expansion-panel>
+              <v-expansion-panel-title
+                ><h4 class="font-weight-bold">
+                   Amenity
+                </h4></v-expansion-panel-title
+              >
+              <v-expansion-panel-text>
+                <div class="d-flex flex-column">
+                  <div class="pb-4">
+                    <v-checkbox
+                      :label="item.name"
+                      class="suggested-filter"
+                      v-for="item in catalogFiltersData.amenities"
+                      :key="item.id"
+                    ></v-checkbox>
+                  </div>
+                </div>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
           <v-divider></v-divider>
-          <h4 class="font-weight-bold pt-4">Distance</h4>
-          <v-radio-group>
-            <v-radio label="Bird's-eye View" value="1"></v-radio>
-            <v-radio label="Driving (5 mi.)" value="2"></v-radio>
-            <v-radio label="Biking (2 mi.)" value="3"></v-radio>
-            <v-radio label="Walking (1 mi.)" value="4"></v-radio>
-            <v-radio label="Within 4 blocks" value="5"></v-radio>
-          </v-radio-group>
         </v-col>
         <v-col cols="10">
           <v-row class="breadcrumbs">
@@ -188,8 +240,12 @@
               </v-card>
             </v-col>
           </v-row>
-          <v-row class="business_items_block" >
-            <CatalogCard :cardData="item"  v-for="item in catalogItems" :key="item.id"/>
+          <v-row class="business_items_block">
+            <CatalogCard
+              :cardData="item"
+              v-for="item in catalogData"
+              :key="item.id"
+            />
           </v-row>
           <v-row class="pagination_block pt-5">
             <v-col cols="6">
@@ -208,34 +264,18 @@
     </v-col>
   </v-row>
 </template>
+
 <script>
 import { reactive, ref, onMounted } from "vue";
+import { storeToRefs } from "pinia";
 import axios from "axios";
-import CatalogCard  from "@/components/catalog_components/CatalogCard.vue";
-
+import CatalogCard from "@/components/catalog_components/CatalogCard.vue";
+import {useCatalogStore} from "../store/catalog/useCatalogStore"
 export default {
-    components: {
-        CatalogCard,
-    },
+  components: {
+    CatalogCard,
+  },
   setup() {
-    const priceFilterValues = ref([
-      {
-        id: 1,
-        price_level: "$",
-      },
-      {
-        id: 2,
-        price_level: "$$",
-      },
-      {
-        id: 3,
-        price_level: "$$$",
-      },
-      {
-        id: 4,
-        price_level: "$$$$",
-      },
-    ]);
     const crumbs = reactive([
       {
         title: "Catalog",
@@ -255,33 +295,22 @@ export default {
     ]);
     const selectedSortOptions = ref(null);
     const sortOptions = ref(["Recomended", "Most Reviewed", "Most Rated"]);
-    const filters = ref([]);
-    const catalogItems = ref([]);
 
-    const fetchFilterData = () => {
-        axios.get('http://localhost:8000/api/v1/filters')
-        .then(response => {
-            filters.value = response.data.data;
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    }
+    //filters v-models arrays
+    const price_panel = ref([0]);
+    const suggest_panel = ref([0]);
+    const category_panel = ref([]);
+    const feature_panel = ref([]);
+    const amenity_panel = ref([]);
 
-    const fetchCatalogItemData = () => {
-        axios.get('http://localhost:8000/api/v1/catalog')
-        .then(response => {
-            catalogItems.value = response.data.data;
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    }
+    //get store data
+    const { catalogData,catalogFiltersData } = storeToRefs(useCatalogStore());
+    const { fetchAllBusinessCatalogData,fetchCatalogDataFilters } = useCatalogStore();
 
     onMounted(async () => {
       try {
-        fetchFilterData();
-        fetchCatalogItemData();
+        fetchAllBusinessCatalogData();
+        fetchCatalogDataFilters();
       } catch (error) {
         console.error(error);
       }
@@ -291,9 +320,13 @@ export default {
       crumbs,
       selectedSortOptions,
       sortOptions,
-      priceFilterValues,
-      filters,
-      catalogItems,
+      catalogData,
+      catalogFiltersData,
+      price_panel,
+      suggest_panel,
+      category_panel,
+      feature_panel,
+      amenity_panel,
     };
   },
 };
@@ -354,3 +387,6 @@ input[type="checkbox"]:checked + label {
   word-wrap: break-word !important;
 }
 </style>
+
+
+
