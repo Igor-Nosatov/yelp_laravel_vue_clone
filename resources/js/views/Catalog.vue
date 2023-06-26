@@ -268,9 +268,9 @@
 <script>
 import { reactive, ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import axios from "axios";
 import CatalogCard from "@/components/catalog_components/CatalogCard.vue";
-import {useCatalogStore} from "../store/catalog/useCatalogStore"
+import {useCatalogStore} from "../store/catalog/useCatalogStore";
+
 export default {
   components: {
     CatalogCard,

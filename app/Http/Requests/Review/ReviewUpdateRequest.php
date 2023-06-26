@@ -24,6 +24,8 @@ class ReviewUpdateRequest extends FormRequest
         return [
             'rating' => ['integer'],
             'content' => ['string', 'min:10', 'max:1200'],
+            'user_id'=> ['exists:users,id'],
+            'business_id'=> ['exists:businesses,id'],
         ];
     }
 }
