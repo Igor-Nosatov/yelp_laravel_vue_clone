@@ -6,21 +6,27 @@
         </div>
         <div>
           <h4 class="title-catalog-item ">{{ cardData.name }}</h4>
-          <div class="chip-list d-flex flex-row mx-auto pl-2 flex-wrap">
-            <v-chip class="mr-1 mt-3" v-for="item in cardData.features" :key="item.id">{{ item.name }}</v-chip>
-          </div>
           <div class="chip-list d-flex flex-column mx-auto pl-2">
             <div class="street pl-3">
               <h5>Address:{{ cardData.address }}</h5>
             </div>
           </div>
 
+          <h5 class=" pl-3">Amenities:</h5>
           <div class="short-feature-list d-flex flex-row mx-auto pl-2 pr-2" v-for="item in cardData.amenities" :key="item.id">
             <div class="d-flex flex-row flex-wrap">
               <v-icon class="mdi">mdi-check</v-icon>
               <h6 class="text-subtitle-2">{{ item.name }}</h6>
             </div>
           </div>
+
+
+          <router-link
+          :to="{ name: 'catalog-item', params: { id: cardData.id }}"
+          class="mr-2 text-decoration-none"
+          ><v-btn class="ml-5 mt-2">More detail</v-btn>
+
+        </router-link>
         </div>
       </v-card>
     </v-col>

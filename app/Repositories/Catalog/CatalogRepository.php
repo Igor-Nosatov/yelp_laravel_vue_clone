@@ -17,8 +17,8 @@ class CatalogRepository implements CatalogInterface
 
     }
 
-    public function getById(int $id): ?array
+    public function getById(Business $business): ?array
     {
-        return  Business::find($id)->toArray();
+        return  Business::find($business)->toArray();
     }
 }

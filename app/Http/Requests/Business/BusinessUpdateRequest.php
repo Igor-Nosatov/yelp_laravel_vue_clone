@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Requests\Business;
 
@@ -22,7 +23,19 @@ class BusinessUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'min:3', 'max:500'],
+            'price_level' => ['required', 'string','min:3', 'max:50'],
+            'address'=> ['required', 'string', 'min:3', 'max:500'],
+            'city'=> ['required', 'string', 'min:3', 'max:500'],
+            'state'=> [ 'string', 'min:3', 'max:500'],
+            'postal_code'=> ['required', 'string', 'min:3', 'max:500'],
+            'country'=> ['required', 'string', 'min:3', 'max:500'],
+            'phone'=> ['required', 'string', 'min:3', 'max:500'],
+            'email' => ['required', 'string', 'min:3', 'max:500'],
+            'website' =>['required',  'string', 'min:3', 'max:500'],
+            'description' => ['required', 'string', 'min:100', 'max:5000'],
+            'latitude'=> ['required', 'string', 'min:3', 'max:500'],
+            'longitude'=> ['required', 'string', 'min:3', 'max:500'],
         ];
     }
 }

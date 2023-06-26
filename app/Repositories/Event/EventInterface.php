@@ -10,9 +10,9 @@ use App\Models\Event;
 
 interface EventInterface
 {
-    public function create(EventStoreRequest $request):  ? array;
-
-    public function update(EventUpdateRequest $request, Event $event) : bool;
-
-    public function delete(Event $event): void;
+    public function getAll(): mixed;
+    public function getById(Event $event): ?array;
+    public function store(EventStoreRequest $request):  ? array;
+    public function update(EventUpdateRequest $request, Event $event) : ?bool;
+    public function delete(Event $event): ?bool;
 }
