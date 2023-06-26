@@ -788,6 +788,40 @@
 </template>
 
 <script>
+import { reactive, ref, onMounted } from "vue";
+import { storeToRefs } from "pinia";
+import {useCatalogStore} from "../store/catalog/useCatalogStore";
+
+export default{
+setup(){
+
+    //get store data
+    const { catalogData,catalogFiltersData } = storeToRefs(useCatalogStore());
+    const { fetchAllBusinessCatalogData,fetchCatalogDataFilters } = useCatalogStore();
+
+    onMounted(async () => {
+      try {
+        fetchAllBusinessCatalogData();
+        fetchCatalogDataFilters();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    return {
+      crumbs,
+      selectedSortOptions,
+      sortOptions,
+      catalogData,
+      catalogFiltersData,
+      price_panel,
+      suggest_panel,
+      category_panel,
+      feature_panel,
+      amenity_panel,
+    };
+}
+}
 </script>
 <style scoped>
 .title-block {

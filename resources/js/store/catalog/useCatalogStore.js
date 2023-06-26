@@ -6,12 +6,16 @@ export const useCatalogStore = defineStore("catalogStore", {
         return {
             catalogData:[],
             catalogFiltersData:[],
+            companyById: {},
         };
     },
     getters: {},
     actions: {
         async fetchAllBusinessCatalogData() {
             this.catalogData = await catalogDataService.fetchBusinessCatalogData();
+        },
+        async fetchAllBusinessCatalogDataById(id) {
+            this.companyById = await catalogDataService.fetchCatalogItemById(id);
         },
         async fetchCatalogDataFilters() {
             this.catalogFiltersData = await catalogDataService.fetchCatalogFilters();

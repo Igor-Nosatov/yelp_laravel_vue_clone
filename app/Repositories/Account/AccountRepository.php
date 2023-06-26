@@ -4,32 +4,43 @@ declare(strict_types=1);
 
 namespace App\Repositories\Account;
 
+use App\Http\Requests\Account\AccountCreateRequest;
+use App\Http\Requests\Account\AccountUpdateRequest;
+use App\Models\Account;
 use App\Repositories\Account\AccountInterface;
+use Illuminate\Support\Facades\Auth;
 
 class  AccountRepository implements AccountInterface
 {
-    public function getAll(): array
-    {
-        // TODO: Implement getAll() method.
-    }
-
     public function getById(int $id): ?array
     {
-        // TODO: Implement getById() method.
+        return Account::where('user_id', Auth::id());
     }
 
-    public function create(array $data): ?array
+    public function store(AccountCreateRequest $request):?bool
     {
-        // TODO: Implement create() method.
+        Account::create( [
+            'profile_image'=> $request->profile_image,
+            'user_id'=> Auth::id(),
+            'phone_number'=> $request->phone_number,
+        ]);
+        return true;
     }
 
-    public function update(int $id, array $data): bool
+    public function update(Account $account, AccountUpdateRequest $request):?bool
     {
-        // TODO: Implement update() method.
+        $account = Account::find($account);
+        $account->update([
+            'profile_image'=> $request->profile_image,
+            'phone_number'=> $request->phone_number,
+            'user_id'=> Auth::id(),
+        ]);
+        return true;
     }
 
-    public function delete(int $id): bool
+    public function delete(Account $account): ?bool
     {
-        // TODO: Implement delete() method.
+        $account->delete();
+        return true;
     }
 }

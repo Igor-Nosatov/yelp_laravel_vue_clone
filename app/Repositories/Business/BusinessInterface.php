@@ -10,9 +10,9 @@ use App\Models\Business;
 
 interface BusinessInterface
 {
-    public function create(BusinessStoreRequest $request): ?array;
+    public function store(BusinessStoreRequest $request): ?array;
 
-    public function update(BusinessUpdateRequest $request, Business $business): bool;
+    public function update(BusinessUpdateRequest $request, Business $business): ?bool;
 
-    public function delete(Business $business): void;
+    public function delete(Business $business): ?bool;
 }

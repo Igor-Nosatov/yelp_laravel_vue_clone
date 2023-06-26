@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace App\Repositories\Account;
 
+use App\Http\Requests\Account\AccountCreateRequest;
+use App\Http\Requests\Account\AccountUpdateRequest;
+use App\Models\Account;
+
 interface AccountInterface
 {
-    public function getAll(): array;
-
     public function getById(int $id): ?array;
 
-    public function create(array $data): ?array;
+    public function store(AccountCreateRequest $request):?bool;
 
-    public function update(int $id, array $data): bool;
+    public function update(Account $account, AccountUpdateRequest $request): ?bool;
 
-    public function delete(int $id): bool;
+    public function delete(Account $account):?bool;
 }

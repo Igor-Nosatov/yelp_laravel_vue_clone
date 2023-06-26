@@ -10,9 +10,9 @@ use App\Models\Review;
 
 interface ReviewInterface
 {
-    public function create(ReviewStoreRequest $request): ?array;
-
-    public function update(ReviewUpdateRequest $request, Review $review): bool;
-
-    public function delete(Review $review): void;
+    public function getAll(): ?array;
+    public function getById(Review $review): ?array;
+    public function store(ReviewStoreRequest $request): ?array;
+    public function update(ReviewUpdateRequest $request, Review $review): ?bool;
+    public function delete(Review $review): ?bool;
 }

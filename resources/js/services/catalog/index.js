@@ -12,5 +12,9 @@ const catalogDataService = {
         const response = await requestService.get(apiEndpointFilters);
         return response?.data?.data;
     },
+    async fetchCatalogItemById(id){
+        const response =  await requestService.get(apiEndpointCatalog+`${id}`);
+        return response?.data?.data;
+    }
 };
 export default catalogDataService;
