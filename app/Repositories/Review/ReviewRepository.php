@@ -11,10 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewRepository implements ReviewInterface
 {
-    public function getAll():  ? array
-    {
-        return Review::where('user_id', Auth::id())->get()->toArray();
-    }
+
     public function getById(Review $review) :  ? array
     {
         return Review::find($review)->toArray();

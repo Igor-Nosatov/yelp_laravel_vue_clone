@@ -17,9 +17,8 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('home', HomeController::class)->only(['index']);
     Route::apiResource('catalog', CatalogController::class)->only(['index', 'show']);
     Route::apiResource('filters', FilterController::class)->only(['index']);
-    Route::apiResource('user', AuthController::class)->only(['update']);
     Route::apiResource('account', AccountController::class);
-    Route::apiResource('review', ReviewController::class);
+    Route::apiResource('review', ReviewController::class)->except(['index']);
     Route::apiResource('blog', BlogController::class);
     Route::apiResource('business', BusinessController::class)->except(['index']);
     Route::apiResource('event', EventController::class);
