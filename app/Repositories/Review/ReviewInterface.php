@@ -10,7 +10,6 @@ use App\Models\Review;
 
 interface ReviewInterface
 {
-    public function getAll(): ?array;
     public function getById(Review $review): ?array;
     public function store(ReviewStoreRequest $request): ?array;
     public function update(ReviewUpdateRequest $request, Review $review): ?array;

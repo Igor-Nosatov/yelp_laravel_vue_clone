@@ -18,18 +18,6 @@ class ReviewController extends BaseController
     {
         $this->reviewRepository = $reviewRepository;
     }
-
-    /**
-     * Get all reviews.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function index(): JsonResponse
-    {
-       $response = $this->reviewRepository->getAll();
-       return $this->successResponse($response,'get all reviews successfully');
-    }
-
     /**
      * Store a newly created resource in storage.
      *
