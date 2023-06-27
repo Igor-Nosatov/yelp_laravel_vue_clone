@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Repositories\Home\HomeInterface;
+use Illuminate\Http\JsonResponse;
 
 class HomeController extends BaseController
 {
@@ -14,7 +15,13 @@ class HomeController extends BaseController
     {
         $this->homeRepository = $homeRepository;
     }
-    public function index()
+
+    /**
+     * Get data for the start page.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(): JsonResponse
     {
         $response = $this->homeRepository->getAll();
         return $this->successResponse(
@@ -22,5 +29,4 @@ class HomeController extends BaseController
             'get data for start page'
         );
     }
-
 }

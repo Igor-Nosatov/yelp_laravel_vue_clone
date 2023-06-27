@@ -35,10 +35,10 @@ class EventRepository implements EventInterface
         return  $event;
     }
 
-    public function update(EventUpdateRequest $request, Event $event) : ?bool
+    public function update(EventUpdateRequest $request, Event $event):  ? array
     {
         $event = Event::find($event);
-        $event->update([
+        $event = $event->update([
             'name'=>$request->name,
             'description'=>$request->description,
             'start_time'=>$request->start_time,
@@ -47,7 +47,7 @@ class EventRepository implements EventInterface
             'image'=>$request->image,
             'url'=>$request->url,
         ], ['user_id' => false]);
-        return true;
+        return $event;
     }
 
     public function delete(Event $event): ?bool

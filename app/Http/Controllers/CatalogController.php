@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Repositories\Catalog\CatalogInterface;
+use Illuminate\Http\JsonResponse;
 
 class CatalogController extends BaseController
 {
@@ -14,18 +15,30 @@ class CatalogController extends BaseController
     {
         $this->catalogRepository = $catalogRepository;
     }
-    public function index():mixed
+
+    /**
+     * Get all business catalog items.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(): JsonResponse
     {
         $response = $this->catalogRepository->getAll();
         return $this->successPaginationResponse(
             $response,
-            'get business catalog'
+            'get list of businessess successfully'
         );
     }
 
-    public function show(int $id):mixed
+    /**
+     * Get a specific business item from the catalog by ID.
+     *
+     * @param mixed $business
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show($business): JsonResponse
     {
-        $response =  $this->catalogRepository->getById($id);
-        return $this->successResponse($response, 'get business item by id from catalog');
+        $response =  $this->catalogRepository->getById($business);
+        return $this->successResponse($response, 'get business item by id for catalog successfully');
     }
 }

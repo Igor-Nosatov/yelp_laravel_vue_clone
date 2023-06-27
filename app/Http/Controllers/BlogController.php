@@ -8,6 +8,7 @@ use App\Http\Requests\Blog\BlogCreateRequest;
 use App\Http\Requests\Blog\BlogUpdateRequest;
 use App\Models\Blog;
 use App\Repositories\Blog\BlogInterface;
+use Illuminate\Http\JsonResponse;
 
 class BlogController extends BaseController
 {
@@ -17,35 +18,70 @@ class BlogController extends BaseController
     {
         $this->blogRepository = $blogRepository;
     }
-    public function index():mixed
+
+    /**
+     * Get all blog posts.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index():JsonResponse
     {
-        $response = $this->blogRepository->getAll();
+        $response = $this->blogRepository->index();
         return $this->successPaginationResponse(
             $response,
-            'get blog post'
+            'get blog posts  successfully'
         );
     }
 
-    public function show(int $id):mixed
+    /**
+     * Get a specific blog post by ID.
+     *
+     * @param Blog $blog
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(Blog $blog):JsonResponse
     {
-        $response =  $this->blogRepository->getById($id);
-        return $this->successResponse($response, 'get post by id');
+        $response =  $this->blogRepository->show($blog);
+        return $this->successResponse($response, 'get post by id successfully');
     }
 
-    public function store(BlogCreateRequest $request):mixed
+    /**
+     * Create a new blog post.
+     *
+     * @param BlogCreateRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(BlogCreateRequest $request):JsonResponse
     {
         $response =  $this->blogRepository->store($request);
-        return $this->successResponse($response, 'create new post');
+        return $this->successResponse($response, 'create new post successfully');
     }
 
-    public function update(Blog $blog, BlogUpdateRequest $request):mixed
+    /**
+     * Update a blog post.
+     *
+     * @param Blog $blog
+     * @param BlogUpdateRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(Blog $blog, BlogUpdateRequest $request):JsonResponse
     {
-        $response =  $this->blogRepository->update($blog, $request);
-        return $this->successResponse($response, 'create new post');
+        $response = $this->blogRepository->update($blog, $request);
+        return $this->updateSuccessResponse($response, 'update post successfully');
     }
 
-    public function delete(Blog $blog):mixed
+    /**
+     * Delete a blog post.
+     *
+     * @param Blog $blog
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete(Blog $blog):JsonResponse
     {
-
+        $this->blogRepository->delete($blog);
+        return $this->deleteSuccessResponse('deleted successfully');
     }
 }
+
+
+

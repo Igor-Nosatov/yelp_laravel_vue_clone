@@ -7,36 +7,54 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\UserRegisterRequest;
 use App\Repositories\Auth\AuthInterface;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-class AuthController  extends BaseController
-{
-    private $authRepository;
 
+class AuthController extends BaseController
+{
+    private AuthInterface $authRepository;
+
+    /**
+     * AuthController constructor.
+     *
+     * @param AuthInterface $authRepository
+     */
     public function __construct(AuthInterface $authRepository)
     {
         $this->authRepository = $authRepository;
     }
 
-    public function login(LoginRequest $request)
+    /**
+     * Process user login.
+     *
+     * @param LoginRequest $request
+     * @return JsonResponse
+     */
+    public function login(LoginRequest $request): JsonResponse
     {
         $data = $this->authRepository->login($request->email, $request->password);
+
         if (!$data) {
-            return response([
-                'message' => 'incorrect username or password',
+            return response()->json([
+                'message' => 'Incorrect username or password',
                 'data' => null,
                 'status' => JsonResponse::HTTP_UNAUTHORIZED
             ], JsonResponse::HTTP_UNAUTHORIZED);
         }
 
-        return response([
+        return response()->json([
             'message' => 'User login success',
             'data' => $data,
             'status' => JsonResponse::HTTP_CREATED
         ], JsonResponse::HTTP_CREATED);
     }
 
-    public function signUp(UserRegisterRequest $request)
+    /**
+     * Process user registration.
+     *
+     * @param UserRegisterRequest $request
+     * @return JsonResponse
+     */
+    public function signUp(UserRegisterRequest $request): JsonResponse
     {
         return response()->json([
             'message' => 'User register success',
@@ -44,6 +62,4 @@ class AuthController  extends BaseController
             'status' => JsonResponse::HTTP_CREATED
         ], JsonResponse::HTTP_CREATED);
     }
-
 }
-

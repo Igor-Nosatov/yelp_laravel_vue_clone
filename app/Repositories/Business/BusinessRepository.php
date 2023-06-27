@@ -32,10 +32,10 @@ class BusinessRepository implements BusinessInterface
         return $business;
     }
 
-    public function update(BusinessUpdateRequest $request, Business $business): ?bool
+    public function update(BusinessUpdateRequest $request, Business $business): ?array
     {
         $business = Business::find($business);
-        $business->update([
+        $business = $business->update([
             'name'=>$request->name,
             'price_level'=>$request->price_level,
             'address'=>$request->address,
@@ -50,7 +50,7 @@ class BusinessRepository implements BusinessInterface
             'latitude'=>$request->latitude,
             'longitude'=>$request->longitude,
         ]);
-        return true;
+        return  $business;
     }
 
 

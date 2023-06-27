@@ -12,7 +12,7 @@ interface BusinessInterface
 {
     public function store(BusinessStoreRequest $request): ?array;
 
-    public function update(BusinessUpdateRequest $request, Business $business): ?bool;
+    public function update(BusinessUpdateRequest $request, Business $business): ?array;
 
     public function delete(Business $business): ?bool;
 }

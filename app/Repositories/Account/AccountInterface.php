@@ -10,11 +10,10 @@ use App\Models\Account;
 
 interface AccountInterface
 {
-    public function getById(int $id): ?array;
+    public function getById(Account $account): ?array;
 
-    public function store(AccountCreateRequest $request):?bool;
+    public function store(AccountCreateRequest $request):?array;
 
-    public function update(Account $account, AccountUpdateRequest $request): ?bool;
+    public function update(Account $account, AccountUpdateRequest $request): ?array;
 
-    public function delete(Account $account):?bool;
 }

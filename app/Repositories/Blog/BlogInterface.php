@@ -10,13 +10,13 @@ use App\Models\Blog;
 
 interface BlogInterface
 {
-    public function getAll(): mixed;
+    public function index(): mixed;
 
-    public function getById(int $id): ?array;
+    public function show(Blog $blog): ?array;
 
     public function store(BlogCreateRequest $request): ?array;
 
-    public function update(Blog $blog, BlogUpdateRequest $request): ?bool;
+    public function update(Blog $blog, BlogUpdateRequest $request):?array;
 
     public function delete(Blog $blog): ?bool;
 }

@@ -27,20 +27,19 @@ class ReviewRepository implements ReviewInterface
             'user_id' => Auth::id(),
             'business_id' => $request->business_id,
         ]);
-
         return $review;
     }
 
-    public function update(ReviewUpdateRequest $request, Review $review) :  ? bool
+    public function update(ReviewUpdateRequest $request, Review $review) : ? array
     {
         $review = Review::find($review);
-        $review->update([
+        $review = $review->update([
             'rating' => $request->rating,
             'content' => $request->content,
             'user_id' => Auth::id(),
             'business_id' => $request->business_id,
         ]);
-        return true;
+        return $review;
     }
 
     public function delete(Review $review) :  ? bool
