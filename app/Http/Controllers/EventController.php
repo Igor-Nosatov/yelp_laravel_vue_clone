@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Event\EventStoreRequest;
+use App\Http\Requests\Event\EventUpdateRequest;
+use App\Models\Event;
 use App\Repositories\Event\EventInterface;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class EventController extends BaseController
 {
@@ -13,56 +16,67 @@ class EventController extends BaseController
     {
         $this->eventRepository = $eventRepository;
     }
-    public function index()
+
+    /**
+     * Get all events.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(): JsonResponse
     {
-        //
+        $response = $this->eventRepository->getAll();
+        return $this->successResponse(
+            $response,
+            'get events successfully'
+        );
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new event.
+     *
+     * @param \App\Http\Requests\Event\EventStoreRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function create()
+    public function store(EventStoreRequest $request): JsonResponse
     {
-        //
+        $response = $this->eventRepository->store($request);
+        return $this->successResponse($response, 'create new event successfully');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Get a specific event by ID.
+     *
+     * @param \App\Models\Event $event
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function show(Event $event): JsonResponse
     {
-        //
+        $response = $this->eventRepository->getById($event);
+        return $this->successUpdateResponse($response, 'get event by ID successfully');
     }
 
     /**
-     * Display the specified resource.
+     * Update an event.
+     *
+     * @param \App\Http\Requests\Event\EventUpdateRequest $request
+     * @param \App\Models\Event $event
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(string $id)
+    public function update(EventUpdateRequest $request, Event $event): JsonResponse
     {
-        //
+        $response = $this->eventRepository->update($request, $event);
+        return $this->updateSuccessResponse($response, 'update event successfully');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Delete an event.
+     *
+     * @param \App\Models\Event $event
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function edit(string $id)
+    public function destroy(Event $event): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $this->eventRepository->delete($event);
+        return $this->deleteSuccessResponse('deleted successfully');
     }
 }

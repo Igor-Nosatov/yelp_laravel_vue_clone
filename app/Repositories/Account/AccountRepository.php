@@ -10,37 +10,32 @@ use App\Models\Account;
 use App\Repositories\Account\AccountInterface;
 use Illuminate\Support\Facades\Auth;
 
-class  AccountRepository implements AccountInterface
+class AccountRepository implements AccountInterface
 {
-    public function getById(int $id): ?array
+    public function getById(Account $account): ?array
     {
-        return Account::where('user_id', Auth::id());
+        return Account::where('user_id', Auth::id())->get()->toArray;
     }
 
-    public function store(AccountCreateRequest $request):?bool
+    public function store(AccountCreateRequest $request):?array
     {
-        Account::create( [
+        $account  = Account::create( [
             'profile_image'=> $request->profile_image,
             'user_id'=> Auth::id(),
             'phone_number'=> $request->phone_number,
         ]);
-        return true;
+        return $account;
     }
 
-    public function update(Account $account, AccountUpdateRequest $request):?bool
+    public function update(Account $account, AccountUpdateRequest $request):?array
     {
         $account = Account::find($account);
-        $account->update([
+        $account = $account->update([
             'profile_image'=> $request->profile_image,
             'phone_number'=> $request->phone_number,
             'user_id'=> Auth::id(),
         ]);
-        return true;
+        return $account;
     }
 
-    public function delete(Account $account): ?bool
-    {
-        $account->delete();
-        return true;
-    }
 }

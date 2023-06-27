@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Review\ReviewStoreRequest;
+use App\Http\Requests\Review\ReviewUpdateRequest;
 use App\Repositories\Review\ReviewInterface;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+use App\Models\Review;
 
 class ReviewController extends BaseController
 {
@@ -15,56 +18,64 @@ class ReviewController extends BaseController
     {
         $this->reviewRepository = $reviewRepository;
     }
-    public function index()
-    {
-        //
-    }
 
     /**
-     * Show the form for creating a new resource.
+     * Get all reviews.
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function create()
+    public function index(): JsonResponse
     {
-        //
+       $response = $this->reviewRepository->getAll();
+       return $this->successResponse($response,'get all reviews successfully');
     }
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param ReviewStoreRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(ReviewStoreRequest $request): JsonResponse
     {
-        //
+        $response = $this->reviewRepository->store($request);
+        return $this->successResponse($response,'get all reviews successfully');
     }
 
     /**
      * Display the specified resource.
+     *
+     * @param Review $review
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function show(string $id)
+    public function show(Review $review): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $response = $this->reviewRepository->getById($review);
+        return $this->successResponse($response,'get all reviews successfully');
     }
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param ReviewUpdateRequest $request
+     * @param Review $review
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, string $id)
+    public function update(ReviewUpdateRequest $request, Review $review): JsonResponse
     {
-        //
+        $response = $this->reviewRepository->update($request,$review);
+        return $this->successResponse($response,'get all reviews successfully');
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param Review $review
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy(string $id)
+    public function destroy(Review $review): JsonResponse
     {
-        //
+        $this->reviewRepository->delete($review);
+        return $this->deleteSuccessResponse('deleted successfully');
     }
 }

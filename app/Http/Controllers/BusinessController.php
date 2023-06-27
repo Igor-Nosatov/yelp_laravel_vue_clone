@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Business\BusinessStoreRequest;
+use App\Http\Requests\Business\BusinessUpdateRequest;
+use App\Models\Business;
 use App\Repositories\Business\BusinessInterface;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class BusinessController extends BaseController
 {
@@ -15,56 +18,41 @@ class BusinessController extends BaseController
     {
         $this->businessRepository = $businessRepository;
     }
-    public function index()
+
+    /**
+     * Store a new business item.
+     *
+     * @param BusinessStoreRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(BusinessStoreRequest $request): JsonResponse
     {
-        //
+        $response  = $this->businessRepository->store($request);
+        return $this->successResponse($response, 'create new business item');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Update a business item.
+     *
+     * @param BusinessUpdateRequest $request
+     * @param Business $business
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function create()
+    public function update(BusinessUpdateRequest $request, Business $business): JsonResponse
     {
-        //
+        $response  = $this->businessRepository->update($request, $business);
+        return $this->successUpdateResponse($response, 'update business item');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Delete a business item.
+     *
+     * @param Business $business
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function destroy(Business $business): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $this->businessRepository->delete($business);
+        return $this->deleteSuccessResponse('deleted successfully');
     }
 }

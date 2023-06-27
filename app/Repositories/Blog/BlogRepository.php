@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogRepository implements BlogInterface
 {
-    public function getAll(): mixed
+    public function index(): mixed
     {
         return Blog::latest()->paginate(12);
     }
 
-    public function getById(int $id): ?array
+    public function show(Blog $blog): ?array
     {
-        return Blog::find($id)->toArray();
+        return Blog::find($blog)->toArray();
     }
 
     public function store(BlogCreateRequest $request): ?array
@@ -30,18 +30,18 @@ class BlogRepository implements BlogInterface
             'user_id'=> Auth::id(),
             'topic_id'=> $request->topic_id,
         ]);
-        return  $blog;
+        return $blog;
     }
 
-    public function update(Blog $blog, BlogUpdateRequest $request): ?bool
+    public function update(Blog $blog, BlogUpdateRequest $request): ?array
     {
         $blog = Blog::find($blog);
-        $blog->update([
+        $blog = $blog->update([
             'profile_image'=> $request->profile_image,
             'phone_number'=> $request->phone_number,
             'user_id'=> Auth::id(),
         ]);
-        return true;
+        return $blog ;
     }
 
     public function delete(Blog $blog): ?bool

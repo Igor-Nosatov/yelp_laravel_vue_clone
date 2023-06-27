@@ -4,67 +4,60 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Account\AccountCreateRequest;
+use App\Http\Requests\Account\AccountUpdateRequest;
+use App\Models\Account;
 use App\Repositories\Account\AccountInterface;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class AccountController extends BaseController
 {
-    private $accountRepository;
+    private AccountInterface $accountRepository;
 
+    /**
+     * AccountController constructor.
+     *
+     * @param AccountInterface $accountRepository
+     */
     public function __construct(AccountInterface $accountRepository)
     {
         $this->accountRepository = $accountRepository;
     }
-    public function index()
-    {
 
+    /**
+     * Show the specified account.
+     *
+     * @param Account $account
+     * @return JsonResponse
+     */
+    public function show(Account $account): JsonResponse
+    {
+        $response = $this->accountRepository->getById($account);
+        return $this->successResponse($response, 'Get account data for authorized user successfully');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Store a new account.
+     *
+     * @param AccountCreateRequest $request
+     * @return JsonResponse
      */
-    public function create()
+    public function store(AccountCreateRequest $request): JsonResponse
     {
-        //
+        $response = $this->accountRepository->store($request);
+        return $this->createResponse($response, 'Add account data for authorized user successfully');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Update the specified account.
+     *
+     * @param Account $account
+     * @param AccountUpdateRequest $request
+     * @return JsonResponse
      */
-    public function store(Request $request)
+    public function update(Account $account, AccountUpdateRequest $request): JsonResponse
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $response = $this->accountRepository->update($account, $request);
+        return $this->updateSuccessResponse($response, 'Update account data for authorized user successfully');
     }
 }

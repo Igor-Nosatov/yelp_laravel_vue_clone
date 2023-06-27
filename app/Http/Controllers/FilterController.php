@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\Filter\FilterInterface;
+use Illuminate\Http\JsonResponse;
 
 class FilterController extends BaseController
 {
@@ -12,9 +13,15 @@ class FilterController extends BaseController
     {
         $this->filterRepository = $filterRepository;
     }
-    public function index()
+
+    /**
+     * Get all filters.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(): JsonResponse
     {
-        $response =  $this->filterRepository->getAll();
+        $response = $this->filterRepository->getAll();
         return $this->successResponse($response, 'get filter listing');
     }
 }
