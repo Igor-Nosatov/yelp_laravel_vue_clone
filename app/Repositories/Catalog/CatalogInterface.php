@@ -10,6 +10,6 @@ interface CatalogInterface
 {
     public function getAll():mixed;
 
-    public function getById(Business $business): ?array;
+    public function getById(int $id): ?array;
 
 }

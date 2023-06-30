@@ -305,11 +305,11 @@ export default {
 
     //get store data
     const { catalogData,catalogFiltersData } = storeToRefs(useCatalogStore());
-    const { fetchAllBusinessCatalogData,fetchCatalogDataFilters } = useCatalogStore();
+    const { fetchCatalog,fetchCatalogDataFilters } = useCatalogStore();
 
     onMounted(async () => {
       try {
-        fetchAllBusinessCatalogData();
+        fetchCatalog();
         fetchCatalogDataFilters();
       } catch (error) {
         console.error(error);

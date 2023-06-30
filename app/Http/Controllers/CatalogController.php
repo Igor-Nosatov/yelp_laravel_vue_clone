@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use App\Repositories\Catalog\CatalogInterface;
 use Illuminate\Http\JsonResponse;
 
@@ -36,9 +37,9 @@ class CatalogController extends BaseController
      * @param mixed $business
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($business): JsonResponse
+    public function show(int $id): JsonResponse
     {
-        $response =  $this->catalogRepository->getById($business);
+        $response =  $this->catalogRepository->getById($id);
         return $this->successResponse($response, 'get business item by id for catalog successfully');
     }
 }
